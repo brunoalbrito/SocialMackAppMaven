@@ -6,12 +6,12 @@ public class Pessoa implements Serializable {
 
     private long id_pessoa;
     private String nome, email, senha;
-    private int celular;
+    private double celular;
 
     public Pessoa() {
     }
 
-    public Pessoa(long id_pessoa, String nome, String email, String senha, int celular) {
+    public Pessoa(long id_pessoa, String nome, String email, String senha, double celular) {
         this.id_pessoa = id_pessoa;
         this.nome = nome;
         this.email = email;
@@ -51,11 +51,11 @@ public class Pessoa implements Serializable {
         this.senha = senha;
     }
 
-    public int getCelular() {
+    public double getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(double celular) {
         this.celular = celular;
     }
 

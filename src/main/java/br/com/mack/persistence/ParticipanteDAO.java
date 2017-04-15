@@ -19,19 +19,18 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
     public void create(Participante part){
         
         try {
-            String sql = "INSERT INTO pessoa(nome,email,celular,senha)VALUES(?,?,?,?)";
+            String sql = "INSERT INTO pessoa(nome,tipo,email,senha)VALUES(?,1,?,?,123)";
         
             PreparedStatement ps = connection.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1,part.getNome());
             ps.setString(2,part.getEmail());
-            ps.setInt(3,part.getCelular());
-            ps.setString(4,part.getSenha());
+            //ps.setString(3,part.getSenha());
             ps.execute();
             ResultSet keys = ps.getGeneratedKeys();
             keys.next();
             part.setId_pessoa(keys.getInt(1));
             
-            String sql2 = "INSERT INT participante(id_pessoa,formacao)VALUES(?,?)";
+            String sql2 = "INSERT INT participante(id_pessoa)VALUES(?)";
             PreparedStatement ps2 = connection.prepareStatement(sql2);
             ps2.setLong(1,part.getId_pessoa());
             ps2.setString(2,part.getFormacao());
