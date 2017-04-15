@@ -5,17 +5,26 @@ import java.io.Serializable;
 public class Pessoa implements Serializable {
 
     private long id_pessoa;
-    private String email, senha;
+    private String nome, email, senha;
     private int celular;
 
     public Pessoa() {
     }
 
-    public Pessoa(long id_pessoa, String email, String senha, int celular) {
+    public Pessoa(long id_pessoa, String nome, String email, String senha, int celular) {
         this.id_pessoa = id_pessoa;
+        this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.celular = celular;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public long getId_pessoa() {
@@ -52,7 +61,7 @@ public class Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "id_pessoa=" + id_pessoa + ", email=" + email + ", senha=" + senha + ", celular=" + celular + '}';
+        return "Pessoa{" + "id_pessoa=" + id_pessoa + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", celular=" + celular + '}';
     }
 
 }

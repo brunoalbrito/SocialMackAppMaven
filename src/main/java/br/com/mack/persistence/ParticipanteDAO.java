@@ -33,8 +33,8 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
             
             String sql2 = "INSERT INT participante(id_pessoa,formacao)VALUES(?,?)";
             PreparedStatement ps2 = connection.prepareStatement(sql2);
-            ps2.setLong(part.getId_pessoa());
-            ps2.setString(part.getFormacao());
+            ps2.setLong(1,part.getId_pessoa());
+            ps2.setString(2,part.getFormacao());
             ps2.execute();
 
             ps.close();
