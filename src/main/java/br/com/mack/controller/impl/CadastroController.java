@@ -32,7 +32,7 @@ public class CadastroController extends AbstractController {
             getRequest().getSession().setAttribute("participante", participante);
             
             email = this.getRequest().getParameter("email");
-            EmailDispatcher.sendEmail(email,getRequest());
+            EmailDispatcher.sendEmail(email,getRequest(),participante.getNome());
             
             setReturnPage("sucesso.jsp");
         } catch (Exception ex) {

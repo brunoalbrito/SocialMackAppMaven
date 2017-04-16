@@ -4,19 +4,16 @@ import com.sendgrid.*;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 
-   public class EmailDispatcher {
+   public class EmailDispatcherPalestra {
                
 
-       public static void sendEmail(String email,HttpServletRequest httpRequest,String nome) {
+       public static void sendEmail(String email,String tema,long codigo) {
        
            Email from = new Email("socialmackapp@mackenzie.com.br");
-           String subject = "Cadastro em SocialMack!";
+           String subject = "Inscrição na palestra "+tema+" !!!";
            Email to = new Email(email);
-           String serverName = httpRequest.getServerName();
-           String pattern = httpRequest.getScheme() + "://";
-           int portNumber = httpRequest.getServerPort();
-           String contextPath = httpRequest.getContextPath();
-           Content content = new Content("text/html", "<h1>Parabéns "+nome+" pelo cadastro</h1></br><h3>Clique <a href= '" + pattern + serverName + ":" + portNumber + contextPath + "/editar.jsp'>aqui</a> para alterar senha.</h3>");
+          
+           Content content = new Content("text/html", "<h1>Você se cadastrou na palestra "+tema+"</h1></br><h3>O código da palestra é "+codigo+"</h3>");
            Mail mail = new Mail(from, subject, to, content);
 
            SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
