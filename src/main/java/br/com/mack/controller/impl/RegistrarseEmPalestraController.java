@@ -28,7 +28,7 @@ public class RegistrarseEmPalestraController extends AbstractController {
         long id_palestra = Long.parseLong(getRequest().getParameter("idPalestra"));
         try {
             palestraDAO.registerInPalestra(id_participante,id_palestra);
-            EmailDispatcherPalestra.sendEmail(email,codigo,tema);
+            EmailDispatcherPalestra.sendEmail(email,tema,codigo);
         } catch (Exception ex) {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
