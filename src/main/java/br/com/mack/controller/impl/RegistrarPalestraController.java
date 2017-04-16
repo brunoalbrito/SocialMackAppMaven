@@ -15,7 +15,7 @@ public class RegistrarPalestraController extends AbstractController{
     
     public void execute(){
         String tema = getRequest().getParameter("tema");
-        int codigo = getRequest().getParameter("codigo");
+        int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         long id_organizador = ((Organizador) getRequest().getSession().getAttribute("organizador")).getId_pessoa();
         
         Palestra palest = new Palestra();
