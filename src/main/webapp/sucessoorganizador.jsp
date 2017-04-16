@@ -7,5 +7,6 @@
     </head>
     <body>
         <h1>Olá organizador</h1>
+        <a href="cadastrarpalestra.jsp"><button type="hidden" name="ctrl" value="Cadastrar Palestra"/>Cadastrar Palestra</a>
     </body>
 </html>

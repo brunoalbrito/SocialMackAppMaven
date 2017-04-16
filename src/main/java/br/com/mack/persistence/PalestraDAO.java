@@ -19,7 +19,18 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     @Override
     public void create(Palestra p) {
-
+        String sql = "insert into palestra(tema,codigo,id_organizador)values(?,?,?)";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, p.getTema());
+            ps.setInt(2, p.getCodigo());
+            ps.setLong(3, p.getId_organizador());
+            ps.execute();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @Override
