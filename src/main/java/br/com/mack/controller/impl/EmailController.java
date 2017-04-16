@@ -8,6 +8,7 @@ package br.com.mack.controller.impl;
      @Override
      public void execute() {
          String email = this.getRequest().getParameter("email");
-         EmailDispatcher.sendEmail(email);
+         String nome = this.getRequest().getParameter("nome");
+         EmailDispatcher.sendEmail(email, nome);
      }
  } 

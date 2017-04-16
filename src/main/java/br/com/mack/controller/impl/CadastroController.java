@@ -36,7 +36,8 @@ public class CadastroController extends AbstractController {
             participanteDAO.create(participante);
             getRequest().getSession().setAttribute("participante", participante);
             email = this.getRequest().getParameter("email");
-            EmailDispatcher.sendEmail(email);
+            name = this.getRequest().getParameter("name");
+            EmailDispatcher.sendEmail(email, name);
             this.setReturnPage("sucesso.jsp");
         } catch (Exception ex) {
             Logger.getLogger(CadastroController.class.getName()).log(Level.SEVERE, null, ex);
