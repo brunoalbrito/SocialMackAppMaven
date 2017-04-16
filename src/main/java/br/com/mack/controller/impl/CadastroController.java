@@ -7,6 +7,8 @@ import br.com.mack.persistence.entities.Participante;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import br.com.mack.email.EmailDispatcher;
+
 public class CadastroController extends AbstractController {
 
     ParticipanteDAO participanteDAO = new ParticipanteDAO();
@@ -28,6 +30,10 @@ public class CadastroController extends AbstractController {
         try {
             participanteDAO.create(participante);
             getRequest().getSession().setAttribute("participante", participante);
+            
+            email = this.getRequest().getParameter("email");
+            EmailDispatcher.sendEmail(email);
+            
             setReturnPage("sucesso.jsp");
         } catch (Exception ex) {
             Logger.getLogger(CadastroController.class.getName()).log(Level.SEVERE, null, ex);
