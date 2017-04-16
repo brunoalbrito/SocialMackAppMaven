@@ -20,11 +20,12 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
     public void create(Participante part){
         
         try {
-            String sql = "INSERT INTO pessoa(nome,email,id_tipo,senha)VALUES(?,?,1,123)";
+            String sql = "INSERT INTO pessoa(nome,email,id_tipo,senha)VALUES(?,?,1,?)";
             
             PreparedStatement ps = connection.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1,part.getNome());
             ps.setString(2,part.getEmail());
+            ps.setString(3, part.getSenha());
             ps.execute();
             ResultSet keys = ps.getGeneratedKeys();
             keys.next();
