@@ -8,6 +8,7 @@ public class Palestra implements Serializable{
     private long id_palestra;
     private String tema;
     private int codigo;
+    private long id_organizador;
     
     public Palestra(){
         
@@ -17,9 +18,18 @@ public class Palestra implements Serializable{
         return this.id_palestra;
     }
     
+    public long getId_organizador(){
+        return this.id_organizador;
+    }
+    
     public void setId_palestra(long id_palestra){
         this.id_palestra = id_palestra;
     }
+    
+    public void setId_organizador(long id_organizador){
+        this.id_organizador = id_organizador;
+    }
+    
     
     public String getTema(){
         return this.tema;
