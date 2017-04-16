@@ -11,7 +11,7 @@ import java.io.IOException;
            Email from = new Email("socialmackapp@mackenzie.com.br");
            String subject = "Cadastro em SocialMack!";
            Email to = new Email(email);
-           Content content = new Content("text/plain", "Clique no link para gerar uma senha \n http://socialmackappteste.herokuapp.com/editar.jsp");
+           Content content = new Content("text/html", "<h1>Clique <a href='http://socialmackappteste.herokuapp.com/editar.jsp'>aqui</a> para alterar senha.</h1>");
            Mail mail = new Mail(from, subject, to, content);
 
            SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
