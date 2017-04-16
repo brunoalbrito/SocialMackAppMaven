@@ -11,7 +11,7 @@
                 <input type="text" id="tema" name="tema" placeholder="tema">
             </p>
             <p>
-                <input type="text" id="codigo" name="codigo" pattern="codigo">
+                <input type="text" id="codigo" name="codigo" pattern="codigo" placeholder="codigo">
             </p>
             <input type="hidden" name="ctrl" value="RegistrarPalestra"/>
             <p>
