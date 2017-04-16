@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
        public static void sendEmail(String email,String tema,long codigo) {
        
-           Email from = new Email("socialmackapp@mackenzie.com.br");
+           Email from = new Email("socialmackapp@gmail.com");
            String subject = "Inscrição na palestra "+tema+" !!!";
            Email to = new Email(email);
           

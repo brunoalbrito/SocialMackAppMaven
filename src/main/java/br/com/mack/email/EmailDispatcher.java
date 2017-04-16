@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
        public static void sendEmail(String email,HttpServletRequest httpRequest,String nome) {
        
-           Email from = new Email("socialmackapp@mackenzie.com.br");
+           Email from = new Email("socialmackapp@gmail.com");
            String subject = "Cadastro em SocialMack!";
            Email to = new Email(email);
            String serverName = httpRequest.getServerName();
