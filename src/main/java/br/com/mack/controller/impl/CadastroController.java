@@ -14,7 +14,7 @@ public class CadastroController extends AbstractController {
 
     @Override
     public void execute() {
-        System.out.println("FUNCIONOU");
+        System.out.println("***************CadastroController****************");
         //TesteConnection connection = new TesteConnection();
         
         String name = this.getRequest().getParameter("name");
@@ -22,6 +22,8 @@ public class CadastroController extends AbstractController {
         Participante participante = new Participante();
         participante.setNome(name);
         participante.setEmail(email);
+        participante.setSenha(generatePassword());
+        
         
         try {
             participanteDAO.create(participante);
@@ -31,5 +33,17 @@ public class CadastroController extends AbstractController {
             Logger.getLogger(CadastroController.class.getName()).log(Level.SEVERE, null, ex);
             this.setReturnPage("erro.jsp");
         }
+    }
+    public String generatePassword(){
+        StringBuilder senha = new StringBuilder();
+
+        for (int i = 0; i < 8; i++) {
+            if (i % 2 == 0) {
+                senha.append((char) ((Math.random() * 25) + 65));
+            } else {
+                senha.append("").append((int) ((Math.random() * 10))).append("");
+            }
+        }
+        return senha.toString();
     }
 }
