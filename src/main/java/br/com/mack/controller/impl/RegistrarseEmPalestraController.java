@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author 41583469
  */
-public class RegistrarPalestraController extends AbstractController {
+public class RegistrarseEmPalestraController extends AbstractController {
 
     PalestraDAO palestraDAO = new PalestraDAO();
     @Override
