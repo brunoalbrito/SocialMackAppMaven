@@ -1,0 +1,28 @@
+ id |          nome           |               email               | id_tipo |  celular  |   senha    
+----+-------------------------+-----------------------------------+---------+-----------+------------
+  3 | Bruno Albuquerque Brito | bruno@bruno.com                   |       1 |           | 123
+  4 | Maria                   | maria@maria.com                   |       1 |           | 123
+  5 | Clara                   | bruno@bruno.comsad                |       1 |           | 123
+  6 | Bruno Albuquerque Brito | bruno@bruno.com                   |       1 |           | 123
+  8 | Bruno Albuquerque Brito | bruno@bruno.com                   |       1 |           | 123
+  9 | Clara                   | edson@edson.com                   |       1 |           | 123
+ 10 | Bruno Albuquerque Brito | bruno@bruno.com                   |       1 |           | 123
+ 11 | Bruno Albuquerque Brito | bruno@bruno.com                   |       1 | 975503246 | 123teste
+ 12 | Welder Aparecido        | welder@welder.com                 |       1 | 975503246 | 123teste
+ 13 | Maria Irene             | irene@irene.com                   |       1 | 975523246 | irenesenha
+ 14 | stella                  | stella.fraguas@gmail.com          |       1 |           | 123
+  2 | Bruno                   | teste@teste.com                   |       1 | 975503246 | bruno123
+ 15 | Bruno Albuquerque Brito | tero.bruno@gmail.com              |       1 |           | testebruno
+ 16 | yunovaes                | yuri.novaes.2013@gmail.com        |       1 |           | 123
+ 17 | yunovaes                | yuri.novaes.2013@gmail.com        |       1 |           | asdf
+ 18 | stella                  | stella.fraguas@gmail.com          |       1 |           | 123
+ 19 | Rosa2                   | email@email                       |       1 |           | 1234
+ 20 | stella                  | stella.fraguas@gmail.com          |       1 |           | 123
+ 21 | stella                  | stella.fraguas@gmail.com          |       1 |           | 123
+ 22 | Rabah                   | rabah@teste.com                   |       1 |           | C7M2H4Q1
+ 23 | Bruno Albuquerque Brito | brunoalbuquerquebrito@outlook.com |       1 |           | C0P9B9P5
+ 24 | yuri                    | yuri.novaes.2013@gmail.com        |       1 |           | 1234
+ 25 | Bruno Albuquerque Brito | brunoalbuquerquebrito@outlook.com |       1 | 975503246 | testesenha
+  1 | Bruno                   | teste@teste.com                   |       2 | 975503246 | bruno123
+(24 rows)
+

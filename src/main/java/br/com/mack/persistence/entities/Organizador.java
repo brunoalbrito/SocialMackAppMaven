@@ -5,12 +5,12 @@ import java.io.Serializable;
 public class Organizador extends Pessoa implements Serializable {
 
     private String empresa;
-    private int telefone;
+    private String telefone;
 
     public Organizador() {
     }
 
-    public Organizador(String empresa, int telefone, long id_pessoa,String nome, String email, String senha, String celular) {
+    public Organizador(String empresa, String telefone, long id_pessoa,String nome, String email, String senha, String celular) {
         super(id_pessoa, nome, email, senha, celular);
         this.empresa = empresa;
         this.telefone = telefone;
@@ -24,11 +24,11 @@ public class Organizador extends Pessoa implements Serializable {
         this.empresa = empresa;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

@@ -1,7 +1,7 @@
 package br.com.mack.controller.impl;
 
 import br.com.mack.controller.AbstractController;
-import br.com.mack.persistence.ParticipanteDAO;
+import br.com.mack.persistence.PessoaDAO;
 import br.com.mack.persistence.entities.Organizador;
 import br.com.mack.persistence.entities.Participante;
 import br.com.mack.persistence.entities.Pessoa;
@@ -10,17 +10,17 @@ import java.util.logging.Logger;
 
 public class LoginController extends AbstractController {
 
-    ParticipanteDAO participanteDAO = new ParticipanteDAO();
+    PessoaDAO pessoaDAO = new PessoaDAO();
 
     @Override
     public void execute() {
-        System.out.println("FUNCIONOU");
+        System.out.println("***************LoginController*****************");
 
         String email = this.getRequest().getParameter("email");
         String password = this.getRequest().getParameter("senha");
 
         try {
-            Pessoa pessoa = participanteDAO.readByEmail(email);
+            Pessoa pessoa = pessoaDAO.readByEmail(email,password);
             if ((email.equals(pessoa.getEmail())) && (password.equals(pessoa.getSenha()))) {
                 if (pessoa instanceof Participante) {
                     getRequest().getSession().setAttribute("participante", (Participante) pessoa);

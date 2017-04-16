@@ -52,7 +52,31 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
     
     @Override
     public Participante readById(long id) {
-        return null;
+        Participante p = new Participante();
+        String sql = "select * from "
+                + "pessoa inner join "
+                + "participante on pessoa.id = participante.id_pessoa where pessoa.id = ? and id_tipo = 1";
+        
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {                
+                p.setId_pessoa(id);
+                p.setNome(rs.getString("nome"));
+                p.setEmail(rs.getString("email"));
+                p.setCelular(rs.getString("celular"));
+                p.setSenha(rs.getString("senha"));
+                p.setFormacao(rs.getString("formacao"));
+            }
+            
+            rs.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ParticipanteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return p;
     }
     
     @Override
@@ -84,29 +108,5 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
     @Override
     public void delete(Participante participante) {
         
-    }
-
-    public Pessoa readByEmail(String email) {
-        String sql = "select * from pessoa inner join participante on pessoa.id = participante.id_pessoa where email = ?";
-        Pessoa pessoa = new Participante();
-        PreparedStatement ps;
-        try {
-            ps = connection.prepareStatement(sql);
-            ps.setString(1, email);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {                
-                pessoa.setId_pessoa(Long.parseLong(rs.getString("id")));
-                pessoa.setNome(rs.getString("nome"));
-                pessoa.setEmail(rs.getString("email"));
-                pessoa.setCelular(rs.getString("celular"));
-                pessoa.setSenha(rs.getString("senha"));
-                ((Participante)pessoa).setFormacao(rs.getString("formacao"));
-            }
-            rs.close();
-            ps.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(ParticipanteDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return pessoa;
     }
 }
