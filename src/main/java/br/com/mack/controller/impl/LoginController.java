@@ -21,6 +21,9 @@ public class LoginController extends AbstractController {
 
         try {
             Pessoa pessoa = pessoaDAO.readByEmail(email,password);
+            
+            System.out.println("******************Pessoa encontrada: " + pessoa + "**************************");
+            
             if ((email.equals(pessoa.getEmail())) && (password.equals(pessoa.getSenha()))) {
                 if (pessoa instanceof Participante) {
                     getRequest().getSession().setAttribute("participante", (Participante) pessoa);
