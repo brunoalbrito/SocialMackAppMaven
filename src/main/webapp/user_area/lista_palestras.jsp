@@ -1,7 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:import url="/template/header_post_login.jsp"/>
-${participante}
+
 <div class="row">
 
     <c:out value="${user}"></c:out>
@@ -12,10 +12,10 @@ ${participante}
         <div class="col-sm-12 col-md-4 col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Palestra ${p.id_palestra}
+                    Palestra ${p.codigo}
                 </div>
                 <div class="panel-body">             
-                    ${p}
+                    ${p.tema}
                 </div>
                 <div class="panel-footer">
                     <a href="<c:url value="/FrontController?ctrl=RegistrarseEmPalestra&idPalestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"/>" class="btn btn-default btn-lg center-block">
