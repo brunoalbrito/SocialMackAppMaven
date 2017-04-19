@@ -1,6 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<c:import url="/template/header_post_login_organizador.jsp"/>
+<c:import url="/template/header_post_login.jsp"/>
 ${participante}
 <div class="row">
 
