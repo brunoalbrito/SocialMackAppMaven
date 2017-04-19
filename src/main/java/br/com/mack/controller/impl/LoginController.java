@@ -24,10 +24,11 @@ public class LoginController extends AbstractController {
             
             System.out.println("******************Pessoa encontrada: " + pessoa + "**************************");
             
-            if(pessoa instanceof Particpante)
+            if(pessoa instanceof Participante){
                 System.out.println("Participante: " + ((Participante)pessoa));
-            else
-                System.ou.println("Organizador: " + ((Organizador)pessoa));
+            }else{
+                System.out.println("Organizador: " + ((Organizador)pessoa));
+            }
             
             if ((email.equals(pessoa.getEmail())) && (password.equals(pessoa.getSenha()))) {
                 if (pessoa instanceof Participante) {
