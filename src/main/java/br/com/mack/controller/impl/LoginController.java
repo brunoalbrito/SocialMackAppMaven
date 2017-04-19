@@ -27,7 +27,7 @@ public class LoginController extends AbstractController {
                     this.setReturnPage("sucesso.jsp");
                 } else {
                     getRequest().getSession().setAttribute("organizador", (Organizador) pessoa);
-                    this.setReturnPage("sucessoorganizador.jsp");
+                    this.setReturnPage("organizador_area/home.jsp");
                 }
             } else {
                 this.setReturnPage("erro.jsp");
