@@ -4,9 +4,9 @@
 ${participante}
 <div class="row">
 
-    <c:out value="${organizador}"></c:out>
+    <c:out value="${participante}"></c:out>
 
-    Página inicial do organizador
+    Página inicial do participante
 
 </div>
 

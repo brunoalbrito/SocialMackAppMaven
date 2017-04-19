@@ -24,7 +24,7 @@ public class LoginController extends AbstractController {
             if ((email.equals(pessoa.getEmail())) && (password.equals(pessoa.getSenha()))) {
                 if (pessoa instanceof Participante) {
                     getRequest().getSession().setAttribute("participante", (Participante) pessoa);
-                    this.setReturnPage("sucesso.jsp");
+                    this.setReturnPage("user_area/home.jsp");
                 } else {
                     getRequest().getSession().setAttribute("organizador", (Organizador) pessoa);
                     this.setReturnPage("organizador_area/home.jsp");
