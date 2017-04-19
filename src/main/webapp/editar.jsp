@@ -41,7 +41,7 @@
                         <input type="text" id="celular" name="celular"/>
                     </p>
                     <p>
-                        <label for="formacao">Curso:</label><br>
+                        <label for="curso">Curso:</label><br>
                         <input type="text" id="curso" name="curso"/>
                     </p>
                 </c:when>
@@ -56,8 +56,8 @@
                         <input type="text" id="celular" name="celular" value="${participante.celular}"/>
                     </p>
                     <p>
-                        <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao" value="${participante.formacao}"/>
+                        <label for="curso">Curso:</label><br>
+                        <input type="text" id="curso" name="curso" value="${participante.curso}"/>
                     </p>
                 </c:otherwise>
             </c:choose>
