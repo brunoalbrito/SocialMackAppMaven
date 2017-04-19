@@ -67,7 +67,7 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
                 p.setEmail(rs.getString("email"));
                 p.setCelular(rs.getString("celular"));
                 p.setSenha(rs.getString("senha"));
-                p.setFormacao(rs.getString("formacao"));
+                p.setCurso(rs.getString("curso"));
             }
             
             rs.close();
@@ -92,9 +92,9 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
             ps.setLong(5, participante.getId_pessoa());
             ps.execute();
        
-            String sql2 = "update participante set formacao = ? where id_pessoa = ?";
+            String sql2 = "update participante set Curso = ? where id_pessoa = ?";
             PreparedStatement ps2 = connection.prepareStatement(sql2);
-            ps2.setString(1, participante.getFormacao());
+            ps2.setString(1, participante.getCurso());
             ps2.setLong(2, participante.getId_pessoa());
             ps2.execute();
        

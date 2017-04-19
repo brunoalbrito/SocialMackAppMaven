@@ -5,27 +5,27 @@ import java.io.Serializable;
 
 public class Participante extends Pessoa implements Serializable{
   
-    private String formacao;
+    private String curso;
     
     public Participante() {
     }
 
-    public Participante(String formacao, long id_pessoa,String nome, String email, String senha, String celular) {
+    public Participante(String curso, long id_pessoa,String nome, String email, String senha, String celular) {
         super(id_pessoa,nome, email, senha, celular);
-        this.formacao = formacao;
+        this.curso = curso;
     }
 
-    public String getFormacao() {
-        return formacao;
+    public String getCurso() {
+        return curso;
     }
 
-    public void setFormacao(String formacao) {
-        this.formacao = formacao;
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
     @Override
     public String toString() {
-        return "Participante{" + "formacao=" + formacao + '}';
+        return "Participante{" + "curso=" + curso + '}';
     }
 
    

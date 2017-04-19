@@ -41,8 +41,8 @@
                         <input type="text" id="celular" name="celular"/>
                     </p>
                     <p>
-                        <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao"/>
+                        <label for="formacao">Curso:</label><br>
+                        <input type="text" id="curso" name="curso"/>
                     </p>
                 </c:when>
                 <c:otherwise>
