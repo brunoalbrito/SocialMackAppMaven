@@ -9,6 +9,6 @@
         ${organizador}
         ${organizador.id_pessoa}
         <h1>Olá organizador</h1>
-        <a href="cadastrarpalestra.jsp"><button type="hidden" name="ctrl" value="Cadastrar Palestra"/>Cadastrar Palestra</a>
+        <a href="organizador_area/cadastrarpalestra.jsp"><button type="hidden" name="ctrl" value="Cadastrar Palestra"/>Cadastrar Palestra</a>
     </body>
 </html>
