@@ -22,7 +22,7 @@ public class AlterarParticipanteController extends AbstractController {
         String email = this.getRequest().getParameter("email");
         String celular = this.getRequest().getParameter("celular");
         String senha = this.getRequest().getParameter("senha");
-        String formacao = this.getRequest().getParameter("formacao");
+        String curso = this.getRequest().getParameter("curso");
         
         Participante participante = new Participante();
         participante.setId_pessoa(id);
@@ -30,7 +30,7 @@ public class AlterarParticipanteController extends AbstractController {
         participante.setEmail(email);
         participante.setCelular(celular);
         participante.setSenha(senha);
-        participante.setFormacao(formacao);
+        participante.setCurso(curso);
         
         try {
             participanteDAO.update(participante);
