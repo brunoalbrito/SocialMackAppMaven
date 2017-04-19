@@ -34,7 +34,7 @@ public class CadastroController extends AbstractController {
             email = this.getRequest().getParameter("email");
             EmailDispatcher.sendEmail(email,getRequest(),participante.getNome());
             
-            setReturnPage("sucesso.jsp");
+            setReturnPage("user_area/home.jsp");
         } catch (Exception ex) {
             Logger.getLogger(CadastroController.class.getName()).log(Level.SEVERE, null, ex);
             this.setReturnPage("erro.jsp");
