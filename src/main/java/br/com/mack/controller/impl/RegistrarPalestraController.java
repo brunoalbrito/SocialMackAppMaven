@@ -21,7 +21,7 @@ public class RegistrarPalestraController extends AbstractController{
             Palestra novaPalestra = (Palestra)this.getRequest().getSession().getAttribute("palestra_pendente");
             System.out.println("Palestra após persistência: " + novaPalestra.getId_palestra());
             daoPalestra.create(novaPalestra);
-            System.out.println("Interesses")
+            System.out.println("Interesses");
             for(String id:interesses){
                 System.out.println(id);
                 long interesseId = Long.parseLong(id);

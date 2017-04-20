@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InteresseDAO implements GenericDAO<Interesse> {
-\q
     public static Connection connection = SingletonConnection.getInstance().getConnection();
 
     @Override
