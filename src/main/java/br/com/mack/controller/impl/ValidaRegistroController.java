@@ -31,7 +31,7 @@ public class ValidaRegistroController extends AbstractController{
         //Setando lista de interesses na sessão (simulando para teste)
         this.getRequest().getSession().setAttribute("interesses", new String[]{"Interesse a", "Interesse b", "Interesse c", "Interesse d", "Interesse e"});
         
-        this.setReturnPage("organizador_area/palestra_interesse.jsp");
+        this.setReturnPage("organizador_area/palestra_interesses.jsp");
     }
     
 }

@@ -7,22 +7,17 @@
         <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    LOGIN
+                    REGISTRO DE PALESTRA
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController">
                         <input type="text" title="Digite o tema." name="tema" placeholder="Tema" required="required" class="form-control input-lg">
                         <br/>
-                        <input type="password" title="Digite o código." name="codigo" placeholder="Código" required="required" class="form-control input-lg">
+                        <input type="number" title="Digite o código." name="codigo" placeholder="Código" required="required" class="form-control input-lg">
                         <br/>
                         <input type="hidden" value="ValidaRegistro" name="ctrl">
                         <input type="submit" value="PRÓXIMO" class="btn btn-default btn-lg center-block">
-                    </form>
-    
-                    <br/>
-    
-                    <a style="text-align: center;" href="cadastro.jsp" role="button"><h4>Cadastre-se</h4></a>
-    
+                    </for    
                 </div>
             </div>
         </div>
