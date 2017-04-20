@@ -1,13 +1,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:import url="/template/header_post_login.jsp"/>
-${participante}
+
 <div class="row">
-
-    <c:out value="${user}"></c:out>
-
-    <c:forEach items="${palestras}" var="p">
-    
+    <c:forEach items="${palestras}" var="p">    
 
         <div class="col-sm-12 col-md-4 col-lg-3">
             <div class="panel panel-default">
