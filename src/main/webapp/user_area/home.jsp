@@ -2,7 +2,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <c:import url="/template/header_post_login.jsp"/>
-${participante}
 <div class="row">
 
     <c:out value="${participante}"></c:out>
