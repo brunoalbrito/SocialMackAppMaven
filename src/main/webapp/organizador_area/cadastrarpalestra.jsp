@@ -6,7 +6,7 @@
         <title>Cadastrar Palestra</title>
     </head>
     <body>
-        <form method="POST" action="FrontController">
+        <form method="POST" action="${pageContext.request.contextPath}/FrontController">
             <p>
                 <input type="text" id="tema" name="tema" placeholder="tema">
             </p>

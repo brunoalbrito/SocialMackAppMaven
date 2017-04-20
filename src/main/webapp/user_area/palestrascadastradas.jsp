@@ -4,9 +4,9 @@
 <c:import url="/template/header_post_login.jsp"/>
 <div class="row">
 
-    <c:out value="${participante}"></c:out>
-
-    Página inicial do participante
+    <c:forEach var="i" items="${palestras}">
+                <c:out value="${i}"></c:out>
+        </c:forEach>
 
 </div>
 
