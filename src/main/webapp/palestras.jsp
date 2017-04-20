@@ -1,9 +1,3 @@
-<%-- 
-    Document   : palestras
-    Created on : 24/03/2017, 08:58:07
-    Author     : 41583469
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
