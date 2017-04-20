@@ -7,6 +7,8 @@ import br.com.mack.persistence.entities.Participante;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import java.nio.charset.Charset;
+
 public class AlterarParticipanteController extends AbstractController {
 
     ParticipanteDAO participanteDAO = new ParticipanteDAO();
@@ -33,6 +35,8 @@ public class AlterarParticipanteController extends AbstractController {
         participante.setCurso(curso);
         
         System.out.println(participante);
+        
+        System.out.println(Charset.defaultCharset());
         
         try {
             participanteDAO.update(participante);

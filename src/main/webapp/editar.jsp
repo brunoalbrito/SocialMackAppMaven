@@ -7,7 +7,7 @@
         <title>Editar</title>
     </head>
     <body>
-        <form action="FrontController" method="POST">
+        <form action="FrontController" method="GET">
             <c:out value="${participante.senha}"></c:out>
                 <p>
                     <label for="id">id:</label><br>
