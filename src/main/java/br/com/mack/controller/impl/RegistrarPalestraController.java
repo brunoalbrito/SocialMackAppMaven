@@ -14,12 +14,7 @@ public class RegistrarPalestraController extends AbstractController{
     PalestraDAO palestraDAO = new PalestraDAO();
     
     public void execute(){
-        String opc = getRequest().getParameter("opc");
-        
-        if(opc.equals("carregar")){
-                
-        }else{
-        
+
             String tema = getRequest().getParameter("tema");
             int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
             long id_organizador = ((Organizador) getRequest().getSession().getAttribute("organizador")).getId_pessoa();
@@ -31,11 +26,10 @@ public class RegistrarPalestraController extends AbstractController{
         
             try{
                 palestraDAO.create(palest);
-                setReturnPage("sucessoorganizador.jsp");
+                setReturnPage("organizador_area/home.jsp");
             
             }catch(Exception ex){
                 Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
-}

@@ -32,11 +32,10 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Palestra <span class="caret"></span></a>
 
                             <ul class="dropdown-menu">
-                                <li><a href="#">Lista</a></li>
+                                <li><a href="${pageContext.request.contextPath}/FrontController?ctrl=ListarPalestra">Lista</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Agenda</a></li>
+                                <li><a href="${pageContext.request.contextPath}/FrontController?ctrl=PalestraInscrito">Agenda</a></li>
                             </ul>
-
                         </li>          
                     </ul> 
 
@@ -58,7 +57,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuário <span class="caret"></span></a>
 
                             <ul class="dropdown-menu">
-                                <li><a href="#">Perfil</a></li>
+                                <li><a href="editar.jsp">Perfil</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Logout</a></li>
                             </ul>
