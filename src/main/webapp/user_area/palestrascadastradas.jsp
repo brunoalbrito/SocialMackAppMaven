@@ -5,9 +5,7 @@
 <div class="row">
 
     <c:forEach var="i" items="${palestras}">
-            <a href="FrontController?ctrl=Inscricao&id_palestra=${i.id_palestra}">
                 <c:out value="${i}"></c:out>
-            </a>
         </c:forEach>
 
 </div>

@@ -23,7 +23,7 @@ public class PalestraInscritoController extends AbstractController {
         } catch (Exception ex) {
             Logger.getLogger(PalestraInscritoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        setReturnPage("palestrascadastradas.jsp");
+        setReturnPage("user_area/palestrascadastradas.jsp");
     }
 
 }
