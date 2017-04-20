@@ -32,6 +32,8 @@ public class AlterarParticipanteController extends AbstractController {
         participante.setSenha(senha);
         participante.setCurso(curso);
         
+        System.out.println(participante);
+        
         try {
             participanteDAO.update(participante);
             getRequest().getSession().setAttribute("participante", participante);

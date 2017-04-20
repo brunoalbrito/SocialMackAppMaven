@@ -25,6 +25,7 @@ public class Participante extends Pessoa implements Serializable{
 
     @Override
     public String toString() {
+        super();
         return "Participante{" + "curso=" + curso + '}';
     }
 
