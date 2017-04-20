@@ -103,7 +103,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     public void registerInPalestra(long id_participante, long id_palestra) {
 
-        String sql = "INSERT INTO participante_palestra(id_participante,id_palestra)VALUES(?,?)";
+        String sql = "INSERT INTO inscricao(id_participante,id_palestra)VALUES(?,?)";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
