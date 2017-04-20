@@ -4,6 +4,7 @@ import br.com.mack.controller.AbstractController;
 import br.com.mack.persistence.InteresseDAO;
 import br.com.mack.persistence.entities.Palestra;
 import br.com.mack.persistence.entities.Interesse;
+import br.com.mack.persistence.entities.Organizador;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

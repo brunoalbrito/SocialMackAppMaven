@@ -17,3 +17,5 @@ public class RegistrarPalestraController extends AbstractController{
 
         
     }
+}
+
