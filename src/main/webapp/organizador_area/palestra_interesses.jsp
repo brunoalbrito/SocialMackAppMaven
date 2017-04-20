@@ -7,7 +7,7 @@
         <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Interesses da Palestra ${palestra_pendente.tema}
+                    Interesses da Palestra "${palestra_pendente.tema}"
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController" class="form-inline">
@@ -28,14 +28,8 @@
                     <form class="form-inline">
                         <div class="col-lg-12">
                             <div class="input-group">
-                                <div class="col-lg-12">
-                                    <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required">
-                                </div>
-                                <div class="col-lg-12">
-                                    <input type="submit" value="" title="Adicionar interesse...">
-                                        <scan class="glyphicon glyphicon-plus"></scan>                                       
-                                    </input>
-                                </div>
+                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required">
+                                <input type="submit" value="ADD" title="Adicionar interesse...">
                             </div>
                         </div>
                     </form>
