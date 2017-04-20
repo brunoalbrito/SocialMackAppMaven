@@ -18,7 +18,7 @@ ${participante}
                     ${p}
                 </div>
                 <div class="panel-footer">
-                    <a href="<c:url value="${pageContext.request.contextPath}/FrontController?ctrl=RegistrarseEmPalestra&idPalestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"/>" class="btn btn-default btn-lg center-block">
+                    <a href="<c:url value="/FrontController?ctrl=RegistrarseEmPalestra&idPalestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"/>" class="btn btn-default btn-lg center-block">
                         Inscrever-se
                     </a>
                 </div>
