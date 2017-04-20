@@ -37,6 +37,7 @@ public class AddInteresseController extends AbstractController {
             novo.setDescricao(interesse);
             daoInteresse.create(novo);
             this.getRequest().getSession().setAttribute("interesses", daoInteresse.readAll());
+            this.getRequest().getSession().removeAttribute("error_message");
         }
         this.setReturnPage("organizador_area/palestra_interesses.jsp");
     }
