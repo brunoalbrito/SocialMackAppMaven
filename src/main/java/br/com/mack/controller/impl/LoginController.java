@@ -18,13 +18,22 @@ public class LoginController extends AbstractController {
 
         String email = this.getRequest().getParameter("email");
         String password = this.getRequest().getParameter("senha");
-
+        
         try {
             Pessoa pessoa = pessoaDAO.readByEmail(email,password);
+            
+            System.out.println("******************Pessoa encontrada: " + pessoa + "**************************");
+            
+            if(pessoa instanceof Participante){
+                System.out.println("Participante: " + ((Participante)pessoa));
+            }else{
+                System.out.println("Organizador: " + ((Organizador)pessoa));
+            }
+            
             if ((email.equals(pessoa.getEmail())) && (password.equals(pessoa.getSenha()))) {
                 if (pessoa instanceof Participante) {
                     getRequest().getSession().setAttribute("participante", (Participante) pessoa);
-                    this.setReturnPage("sucesso.jsp");
+                    this.setReturnPage("user_area/home.jsp");
                 } else {
                     getRequest().getSession().setAttribute("organizador", (Organizador) pessoa);
                     this.setReturnPage("organizador_area/home.jsp");

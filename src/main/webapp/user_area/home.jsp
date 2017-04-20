@@ -1,13 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<c:import url="/template/header_post_login_organizador.jsp"/>
-${participante}
+<c:import url="/template/header_post_login.jsp"/>
 <div class="row">
 
-    <c:out value="${organizador}"></c:out>
+    <c:out value="${participante}"></c:out>
 
-    Página inicial do organizador
+    Página inicial do participante
 
 </div>
 

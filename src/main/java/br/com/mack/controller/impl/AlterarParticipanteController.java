@@ -7,6 +7,8 @@ import br.com.mack.persistence.entities.Participante;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import java.nio.charset.Charset;
+
 public class AlterarParticipanteController extends AbstractController {
 
     ParticipanteDAO participanteDAO = new ParticipanteDAO();
@@ -22,7 +24,7 @@ public class AlterarParticipanteController extends AbstractController {
         String email = this.getRequest().getParameter("email");
         String celular = this.getRequest().getParameter("celular");
         String senha = this.getRequest().getParameter("senha");
-        String formacao = this.getRequest().getParameter("formacao");
+        String curso = this.getRequest().getParameter("curso");
         
         Participante participante = new Participante();
         participante.setId_pessoa(id);
@@ -30,7 +32,11 @@ public class AlterarParticipanteController extends AbstractController {
         participante.setEmail(email);
         participante.setCelular(celular);
         participante.setSenha(senha);
-        participante.setFormacao(formacao);
+        participante.setCurso(curso);
+        
+        System.out.println(participante);
+        
+        System.out.println(Charset.defaultCharset());
         
         try {
             participanteDAO.update(participante);
