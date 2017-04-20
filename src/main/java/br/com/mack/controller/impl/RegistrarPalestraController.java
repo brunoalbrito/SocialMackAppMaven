@@ -16,13 +16,14 @@ public class RegistrarPalestraController extends AbstractController{
     private InteresseDAO daoInteresse = new InteresseDAO();
     
     public void execute(){
-        String interesses[] = this.getRequest().getParameterValues("interesse");
+        String[] interesses = this.getRequest().getParameterValues("interesse");
         if(interesses.length > 0){
             Palestra novaPalestra = (Palestra)this.getRequest().getSession().getAttribute("palestra_pendente");
             
             daoPalestra.create(novaPalestra);
-            
+            System.out.println("Interesses")
             for(String id:interesses){
+                System.out.println(id);
                 long interesseId = Long.parseLong(id);
                 daoInteresse.registrarInteresseByPalestra(interesseId, novaPalestra.getId_palestra());
             }
