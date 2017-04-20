@@ -19,7 +19,7 @@ public class RegistrarPalestraController extends AbstractController{
         String[] interesses = this.getRequest().getParameterValues("interesse");
         if(interesses.length > 0){
             Palestra novaPalestra = (Palestra)this.getRequest().getSession().getAttribute("palestra_pendente");
-            
+            System.out.println("Palestra após persistência: " + novaPalestra.getId_palestra());
             daoPalestra.create(novaPalestra);
             System.out.println("Interesses")
             for(String id:interesses){
