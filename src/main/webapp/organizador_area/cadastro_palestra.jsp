@@ -3,17 +3,29 @@
 
 <c:import url="/template/header_post_login_organizador.jsp"/>
 
-    <form method="POST" action="${pageContext.request.contextPath}/FrontController">
-        <p>
-            <input type="text" id="tema" name="tema" placeholder="tema">
-        </p>
-        <p>
-            <input type="text" id="codigo" name="codigo" placeholder="codigo">
-        </p>
-        <input type="hidden" name="ctrl" value="RegistrarPalestra"/>
-        <p>
-            <input type="submit" value="Registrar"/>
-        </p>
-    </form>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    LOGIN
+                </div>
+                <div class="panel-body">
+                    <form method="POST" action="${pageContext.request.contextPath}/FrontController">
+                        <input type="text" title="Digite o tema." name="tema" placeholder="Tema" required="required" class="form-control input-lg">
+                        <br/>
+                        <input type="password" title="Digite o código." name="codigo" placeholder="Código" required="required" class="form-control input-lg">
+                        <br/>
+                        <input type="hidden" value="ValidaRegistro" name="ctrl">
+                        <input type="submit" value="PRÓXIMO" class="btn btn-default btn-lg center-block">
+                    </form>
+    
+                    <br/>
+    
+                    <a style="text-align: center;" href="cadastro.jsp" role="button"><h4>Cadastre-se</h4></a>
+    
+                </div>
+            </div>
+        </div>
+    </div>
 
 <c:import url="../template/footer_post_login.jsp"/>
