@@ -13,8 +13,7 @@ ${participante}
                 <div class="panel-body">             
                     ${p}
                 </div>
-                <div class="panel-footer">
-                    <a href="<c:url value="/FrontController?ctrl=ListaParticipante&idPalestra=${p.id_palestra}"/>
+                    <a href="<c:url value="/FrontController?ctrl=ListaParticipante&idPalestra=${p.id_palestra}"/>" class="btn btn-default btn-lg center-block">
                         Participantes
                     </a>
                 </div>
