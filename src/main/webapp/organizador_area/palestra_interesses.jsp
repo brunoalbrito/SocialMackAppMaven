@@ -5,9 +5,9 @@
 ${participante}
 <div class="row">
     Palestra pendente: ${palestra_pendente}
-    <c:foreach items="${interesses}" var="i">
+    <c:forEach items="${interesses}" var="i">
         ${i}<br/>
-    </c:foreach>
+    </c:forEach>
 
 </div>
 
