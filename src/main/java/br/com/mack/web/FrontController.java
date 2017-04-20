@@ -22,6 +22,8 @@ public class FrontController extends HttpServlet {
         out.println("<H1>Hello from a Servlet</h2>"); 
         out.println("<P>Courtesy of FrontController ");*/
         
+        request.setCharacterEncoding("UTF-8");
+        
         String ctrl = request.getParameter("ctrl");
         
         Controller controller = ControllerFactory.getInstanceByName(ctrl);
