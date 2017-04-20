@@ -19,6 +19,17 @@
                     Interesses da Palestra "${palestra_pendente.tema}"
                 </div>
                 <div class="panel-body">
+                
+                    <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
+                                <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
+                            </div>
+                            <input type="hidden" name="ctrl" value="AddInteresse">                            
+                        </div>
+                    </form>
+                
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController" class="form-inline">
                         
                         <c:forEach items="${interesses}" var="i">
@@ -31,17 +42,8 @@
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->                      
                         </c:forEach>                      
-                        
-                    </form>    
-                    
-                    <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
-                                <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
-                                <input type="hidden" name="ctrl" value="AddInteresse">
-                            </div>
-                        </div>
+                        <input type="hidden" name="ctrl" value="RegistrarPalestra">
+                        <input type="submit" value="CADASTRAR">
                     </form>
                 </div>
             </div>
