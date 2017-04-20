@@ -36,7 +36,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
         List<Interesse> interesses = new ArrayList<Interesse>();
 
         //Declarar String de busca
-        String sql = "SELECT * FROM palestra";
+        String sql = "SELECT * FROM interesse";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -86,22 +86,22 @@ public class InteresseDAO implements GenericDAO<Interesse> {
     }
     
     public void registrarInteresseByPalestra(long idInteresse, long idPalestra){
-        String sql = "INSERT INTO interesse_palestra(id_interesse, id_palestra) VALUES(?,?);";
+        String sql = "INSERT INTO palestra_interesse VALUES(?,?);";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setLong(1, idInteresse);
-            ps.setLong(2, idPalestra);
+            ps.setLong(1, idPalestra);
+            ps.setLong(2, idInteresse);
         }catch(SQLException ex){
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);            
         }
     }
     
     public void registrarInteresseByInscricao(long idInteresse, long idInscricao){
-        String sql = "INSERT INTO interesse_inscricao(id_interesse, id_inscricao) VALUES(?,?)";
+        String sql = "INSERT INTO inscricao_interesse VALUES(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setLong(1, idInteresse);
-            ps.setLong(2, idInscricao);
+            ps.setLong(1, idInscricao);
+            ps.setLong(2, idInteresse);
         }catch(SQLException ex){
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);            
         }
