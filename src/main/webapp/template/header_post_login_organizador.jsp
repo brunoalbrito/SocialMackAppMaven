@@ -31,7 +31,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="cadastro_palestra.jsp">Nova</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Agenda</a></li>
+                                <li><a href="${pageContext.request.contextPath}/FrontController?ctrl=ListarPalestraOrganizador">Listar</a></li>
                             </ul>
 
                         </li>          

@@ -21,7 +21,7 @@ public class AddInteresseController extends AbstractController {
         
         //Verificando se o interesse desejado já existe no banco de dados
         for(Interesse i:interesses){
-            if(i.getDescricao().equals(interesse)){
+            if(i.getDescricao().toUpperCase().replaceAll(" ", "").equals(interesse.toUpperCase().replaceAll(" ", ""))){
                 temErro = true;
                 break;
             }
