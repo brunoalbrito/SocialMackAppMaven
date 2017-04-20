@@ -19,7 +19,7 @@ public class ListarPalestraOrganizadorController extends AbstractController {
         setReturnPage("erro.jsp");
         try {
             palestras = palestraDAO.readAll();
-            setReturnPage("oarganizador_area/lista_palestras.jsp");
+            setReturnPage("organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
             Logger.getLogger(ListarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
