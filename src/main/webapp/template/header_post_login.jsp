@@ -32,9 +32,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Palestra <span class="caret"></span></a>
 
                             <ul class="dropdown-menu">
-                                <li><a href="FrontController?ctrl=ListarPalestra">Lista</a></li>
+                                <li><a href="${pageContext.request.contextPath}/FrontController?ctrl=ListarPalestra">Lista</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="FrontController?ctrl=PalestraInscrito">Agenda</a></li>
+                                <li><a href="${pageContext.request.contextPath}/FrontController?ctrl=PalestraInscrito">Agenda</a></li>
                             </ul>
                         </li>          
                     </ul> 
