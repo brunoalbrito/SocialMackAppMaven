@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  *
  * @author 41583469
  */
-public class RegistrarseEmPalestraController extends AbstractController {
+public class InscricaoController extends AbstractController {
 
     PalestraDAO palestraDAO = new PalestraDAO();
     @Override
@@ -25,7 +25,7 @@ public class RegistrarseEmPalestraController extends AbstractController {
         String email = participante.getEmail();
         String tema =  getRequest().getParameter("tema");
 
-        long id_palestra = Long.parseLong(getRequest().getParameter("idPalestra"));
+        long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
         try {
             palestraDAO.registerInPalestra(id_participante,id_palestra);
             EmailDispatcherPalestra.sendEmail(email,tema,codigo);

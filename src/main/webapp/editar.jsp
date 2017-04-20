@@ -1,9 +1,3 @@
-<%-- 
-    Document   : newjspindex
-    Created on : 09/03/2017, 10:56:10
-    Author     : 1147106
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +7,7 @@
         <title>Editar</title>
     </head>
     <body>
-        <form action="FrontController" method="POST">
+        <form action="FrontController" method="GET">
             <c:out value="${participante.senha}"></c:out>
                 <p>
                     <label for="id">id:</label><br>
@@ -41,8 +35,8 @@
                         <input type="text" id="celular" name="celular"/>
                     </p>
                     <p>
-                        <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao"/>
+                        <label for="curso">Curso:</label><br>
+                        <input type="text" id="curso" name="curso"/>
                     </p>
                 </c:when>
                 <c:otherwise>
@@ -56,8 +50,8 @@
                         <input type="text" id="celular" name="celular" value="${participante.celular}"/>
                     </p>
                     <p>
-                        <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao" value="${participante.formacao}"/>
+                        <label for="curso">Curso:</label><br>
+                        <input type="text" id="curso" name="curso" value="${participante.curso}"/>
                     </p>
                 </c:otherwise>
             </c:choose>
