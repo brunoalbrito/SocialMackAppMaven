@@ -4,7 +4,16 @@
 <c:import url="/template/header_post_login_organizador.jsp"/>
 
 <div class="row">
+
         <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        
+            <c:if test="${error_message != null}">
+                <div class="alert alert-danger alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>ERRO!</strong> ${error_message}
+                </div>
+            </c:if>
+        
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Interesses da Palestra "${palestra_pendente.tema}"
@@ -25,11 +34,12 @@
                         
                     </form>    
                     
-                    <form class="form-inline">
+                    <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
                         <div class="col-lg-12">
                             <div class="input-group">
-                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required">
-                                <input type="submit" value="ADD" title="Adicionar interesse...">
+                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
+                                <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
+                                <input type="hidden" name="ctrl" value="AddInteresse">
                             </div>
                         </div>
                     </form>
