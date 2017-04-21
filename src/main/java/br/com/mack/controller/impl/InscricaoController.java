@@ -18,6 +18,10 @@ public class InscricaoController extends AbstractController {
         long id_participante = participante.getId_pessoa();
 
         long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+        
+        long codigo = Long.parseLong(getRequest().getParameter("codigo"));
+        
+        String email = participante.getEmail();
         try {
             palestraDAO.registerInPalestra(id_participante,id_palestra);
             EmailDispatcherPalestra.sendEmail(email,tema,codigo);
