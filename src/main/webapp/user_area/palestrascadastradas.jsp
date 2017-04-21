@@ -6,7 +6,8 @@
 
     <c:forEach var="i" items="${palestras}">
             <a href="FrontController?ctrl=Inscricao&id_palestra=${i.id_palestra}">
-                <c:out value="${i}"></c:out>
+                <c:out value="${p.tema}"></c:out>
+                <c:out value="${p.codigo}"></c:out>
             </a>
         </c:forEach>
 
