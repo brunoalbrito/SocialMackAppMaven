@@ -1,8 +1,9 @@
 package br.com.mack.controller.impl;
 
 import br.com.mack.controller.AbstractController;
+import br.com.mack.persistence.InteresseDAO;
 import br.com.mack.persistence.PalestraDAO;
-import br.com.mack.persistence.entities.Organizador;
+import br.com.mack.persistence.entities.Interesse;
 import br.com.mack.persistence.entities.Palestra;
 import java.util.List;
 import java.util.logging.Level;
@@ -11,25 +12,28 @@ import java.util.logging.Logger;
 
 public class RegistrarPalestraController extends AbstractController{
     
-    PalestraDAO palestraDAO = new PalestraDAO();
+    private PalestraDAO daoPalestra = new PalestraDAO();
+    private InteresseDAO daoInteresse = new InteresseDAO();
     
     public void execute(){
-        String tema = getRequest().getParameter("tema");
-        int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
-        long id_organizador = ((Organizador) getRequest().getSession().getAttribute("organizador")).getId_pessoa();
-        
-        Palestra palest = new Palestra();
-        palest.setTema(tema);
-        palest.setCodigo(codigo);
-        palest.setId_organizador(id_organizador);
-        
-        try{
-            palestraDAO.create(palest);
-            setReturnPage("sucessoorganizador.jsp");
+        String[] interesses = this.getRequest().getParameterValues("interesse");
+        if(interesses.length > 0){
+            Palestra novaPalestra = (Palestra)this.getRequest().getSession().getAttribute("palestra_pendente");
+            System.out.println("Palestra após persistência: " + novaPalestra.getId_palestra());
+            daoPalestra.create(novaPalestra);
+            System.out.println("Interesses");
+            for(String id:interesses){
+                System.out.println(id);
+                long interesseId = Long.parseLong(id);
+                daoInteresse.registrarInteresseByPalestra(interesseId, novaPalestra.getId_palestra());
+            }
             
-        }catch(Exception ex){
-            Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
+            this.setReturnPage("organizador_area/cadastro_palestra.jsp");
+        }else{
+            this.getRequest().getSession().setAttribute("error_message", "Selecione pelo menos 1 Interesse.");
+            this.setReturnPage("organizador_area/palestra_interesses.jsp");
         }
         
     }
 }
+

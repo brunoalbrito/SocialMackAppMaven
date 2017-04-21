@@ -3,11 +3,7 @@
 <c:import url="/template/header_post_login.jsp"/>
 
 <div class="row">
-
-    <c:out value="${user}"></c:out>
-
-    <c:forEach items="${palestras}" var="p">
-    
+    <c:forEach items="${palestras}" var="p">    
 
         <div class="col-sm-12 col-md-4 col-lg-3">
             <div class="panel panel-default">
@@ -15,10 +11,10 @@
                     Palestra ${p.codigo}
                 </div>
                 <div class="panel-body">             
-                    ${p.tema}
+                    <p>Tema da Palestra: ${p.tema}</p>
                 </div>
                 <div class="panel-footer">
-                    <a href="<c:url value="/FrontController?ctrl=RegistrarseEmPalestra&idPalestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"/>" class="btn btn-default btn-lg center-block">
+                    <a href="<c:url value="/FrontController?ctrl=Inscricao&id_palestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema} class="btn btn-default btn-lg center-block">
                         Inscrever-se
                     </a>
                 </div>
