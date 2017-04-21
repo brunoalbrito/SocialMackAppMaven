@@ -9,10 +9,6 @@ import br.com.mack.email.EmailDispatcherPalestra;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author 41583469
- */
 public class InscricaoController extends AbstractController {
 
     PalestraDAO palestraDAO = new PalestraDAO();

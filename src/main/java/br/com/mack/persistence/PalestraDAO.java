@@ -68,8 +68,8 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     public List<Palestra> readByIdParticipante(long id) {
         List<Palestra> palestras = new ArrayList();
         String sql = "select p.id,p.tema,p.codigo "
-                + "from palestra p inner join participante_palestra on "
-                + "p.id = participante_palestra.id_palestra where participante_palestra.id_participante = ?";
+                + "from palestra p inner join inscricao i on "
+                + "p.id = i.id_palestra where i.id_participante = ?";
         PreparedStatement ps;
         try {
             ps = connection.prepareStatement(sql);
@@ -103,7 +103,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     public void registerInPalestra(long id_participante, long id_palestra) {
 
-        String sql = "INSERT INTO participante_palestra(id_participante,id_palestra)VALUES(?,?)";
+        String sql = "INSERT INTO inscricao(id_participante,id_palestra)VALUES(?,?)";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
