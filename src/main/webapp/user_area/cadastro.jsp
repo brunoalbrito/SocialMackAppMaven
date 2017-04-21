@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:import url="template/header_pre_login.jsp"/>
+<c:import url="../template/header_pre_login.jsp"/>
 
 <div class="row">
     <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
