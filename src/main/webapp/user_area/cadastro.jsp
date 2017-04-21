@@ -27,4 +27,4 @@
     </div>
 </div>
 
-<c:import url="template/footer_post_login.jsp"/>
+<c:import url="../template/footer_post_login.jsp"/>
