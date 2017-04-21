@@ -18,7 +18,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
 
     @Override
     public void create(Interesse interesse) {
-        String sql = "insert into interesse(descricao)values(?)";
+        String sql = "INSERT INTO interesse(descricao) VALUES(?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, interesse.getDescricao());
@@ -86,7 +86,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
     }
     
     public void registrarInteresseByPalestra(long idInteresse, long idPalestra){
-        String sql = "INSERT INTO palestra_interesse VALUES(?,?);";
+        String sql = "INSERT INTO palestra_interesse(id_Palestra, id_organizador) VALUES(?,?);";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, idPalestra);
