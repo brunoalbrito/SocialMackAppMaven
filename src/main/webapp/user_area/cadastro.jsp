@@ -9,7 +9,7 @@
                 CADASTRO
             </div>
             <div class="panel-body">
-                <form action="FrontController" method="post">
+                <form action="${pageContext.request.contextPath}/FrontController" method="post">
                     <input type="text" name="name" title="Digite seu nome." placeholder="Nome" required="required" class="form-control input-lg">
                     <br/>
                     <input type="email" name="email" title="Digite o endereço de e-mail." placeholder="E-mail" required="required" class="form-control input-lg">
