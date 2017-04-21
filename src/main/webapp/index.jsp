@@ -23,7 +23,7 @@
 
                 <br/>
 
-                <a style="text-align: center;" href="cadastro.jsp" role="button"><h4>Cadastre-se</h4></a>
+                <a style="text-align: center;" href="user_area/cadastro.jsp" role="button"><h4>Cadastre-se</h4></a>
 
             </div>
         </div>

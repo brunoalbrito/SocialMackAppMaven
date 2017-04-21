@@ -28,6 +28,6 @@ public class InscricaoController extends AbstractController {
         } catch (Exception ex) {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        setReturnPage("sucesso.jsp");
+        setReturnPage("user_area/home.jsp");
     }
 }
