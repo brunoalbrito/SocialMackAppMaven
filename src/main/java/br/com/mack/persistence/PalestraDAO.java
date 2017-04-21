@@ -21,11 +21,16 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     public void create(Palestra p) {
         String sql = "insert into palestra(tema,codigo,id_organizador)values(?,?,?)";
         try {
-            PreparedStatement ps = connection.prepareStatement(sql);
+            PreparedStatement ps = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, p.getTema());
             ps.setInt(2, p.getCodigo());
             ps.setLong(3, p.getId_organizador());
             ps.execute();
+            
+            ResultSet keys = ps.getGeneratedKeys();
+            keys.next();
+            p.setId_palestra(keys.getInt(1));
+            
             ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
