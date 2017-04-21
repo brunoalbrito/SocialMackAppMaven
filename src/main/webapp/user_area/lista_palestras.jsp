@@ -14,8 +14,7 @@
                     <p>Tema da Palestra: ${p.tema}</p>
                 </div>
                 <div class="panel-footer">
-                    <a href='<c:url value="/FrontController?ctrl=Inscricao&id_palestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"></c:url>' class="btn btn-default btn-lg center-block"></a>
-                       Inscrever-se
+                    <a href='<c:url value="/FrontController?ctrl=Inscricao&id_palestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}">Inscrever-se</c:url>' class="btn btn-default btn-lg center-block"></a>
                     </a>
                 </div>
             </div>
