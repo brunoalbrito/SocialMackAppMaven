@@ -16,18 +16,20 @@ public class InscricaoController extends AbstractController {
     public void execute() {
         Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
         long id_participante = participante.getId_pessoa();
-        long codigo = Long.parseLong(getRequest().getParameter("codigo"));
-        
-        String email = participante.getEmail();
-        String tema =  getRequest().getParameter("tema");
 
         long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+        
+        long codigo = Long.parseLong(getRequest().getParameter("codigo"));
+        
+        String tema = getRequest().getParameter("tema");
+        
+        String email = participante.getEmail();
         try {
             palestraDAO.registerInPalestra(id_participante,id_palestra);
             EmailDispatcherPalestra.sendEmail(email,tema,codigo);
         } catch (Exception ex) {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        setReturnPage("sucesso.jsp");
+        setReturnPage("user_area/home.jsp");
     }
 }
