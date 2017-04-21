@@ -3,9 +3,9 @@
 <c:import url="/template/header_post_login.jsp"/>
 
 <div class="row">
-    
-    
-       
+
+
+    <c:forEach var="p" items="${palestras}">
 
         <div class="col-sm-12 col-md-4 col-lg-3">
             <div class="panel panel-default">
@@ -16,14 +16,15 @@
                     <p>Tema da Palestra: teste</p>
                 </div>
                 <div class="panel-footer">
-                    <a href='<c:url value="/FrontController?ctrl=Inscricao&id_palestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"></c:url>' class="btn btn-default btn-lg center-block">
-                        Inscrever-se
-                    </a>   
+                    <a href='<c:url value="/FrontController?ctrl=Inscricao&id_palestra=${p.id_palestra}"></c:url>' class="btn btn-default btn-lg center-block">
+                            Inscrever-se
+                        </a>   
+                    </div>
                 </div>
             </div>
-        </div>
 
-    
+    </c:forEach>
+
 
 </div>
 
