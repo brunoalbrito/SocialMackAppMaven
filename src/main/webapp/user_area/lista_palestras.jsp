@@ -15,7 +15,7 @@ ${participante}
                     Palestra ${p.id_palestra}
                 </div>
                 <div class="panel-body">             
-                    ${p}
+                    <p>Tema da Palestra: ${p.tema}</p>
                 </div>
                 <div class="panel-footer">
                     <a href="<c:url value="/FrontController?ctrl=Inscricao&id_palestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"/>" class="btn btn-default btn-lg center-block">
