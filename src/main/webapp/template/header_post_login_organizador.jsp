@@ -5,9 +5,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SocialMack</title>
-        <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css"/>
-        <script src="<c:url value="/js/jquery-3.2.0.min.js"/>" type="text/javascript"></script>
-        <script src="<c:url value="/js/bootstrap.min.js"/>" type="text/javascript"></script>        
+        <link href="<c:url value="../css/bootstrap.min.css"/>" rel="stylesheet" type="text/css"/>
+        <script src="<c:url value="../js/jquery-3.2.0.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="../js/bootstrap.min.js"/>" type="text/javascript"></script>        
     </head>
     <body>
 

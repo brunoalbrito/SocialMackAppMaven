@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="index.jsp">Login<span class="sr-only">(current)</span></a></li>
-                        <li><a href="cadastro.jsp">Cadastro</a></li>        
+                        <li><a href="user_area/cadastro.jsp">Cadastro</a></li>        
                     </ul>  
 
                 </div><!-- /.navbar-collapse -->
