@@ -5,7 +5,7 @@
 
 <div class="row">
 
-        <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="col-sm-12 col-md-12 col-lg-12">
         
             <c:if test="${error_message != null}">
                 <div class="alert alert-danger alert-dismissable">
@@ -21,7 +21,7 @@
                 <div class="panel-body">
                 
                     <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12 com-md-3 col-lg-2">
                             <div class="input-group">
                                 <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
                                 <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
