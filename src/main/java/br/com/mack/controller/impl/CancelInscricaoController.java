@@ -9,7 +9,7 @@ import br.com.mack.email.EmailDispatcherPalestra;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CancelInscricao extends AbstractController {
+public class CancelInscricaoController extends AbstractController {
 
     PalestraDAO palestraDAO = new PalestraDAO();
     @Override
