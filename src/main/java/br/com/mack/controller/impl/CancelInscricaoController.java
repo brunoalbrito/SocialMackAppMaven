@@ -18,9 +18,6 @@ public class CancelInscricaoController extends AbstractController {
         
         long id_participante = participante.getId_pessoa();
         long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
-        long codigo = Long.parseLong(getRequest().getParameter("codigo"));
-        String tema = getRequest().getParameter("tema");
-        String email = participante.getEmail();
 
         try {
             palestraDAO.cancelRegisterInPalestra(id_participante,id_palestra);

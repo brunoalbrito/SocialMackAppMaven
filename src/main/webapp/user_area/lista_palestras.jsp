@@ -19,6 +19,9 @@
                     <a href='<c:url value="/FrontController?ctrl=Inscricao&id_palestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"></c:url>' class="btn btn-default btn-lg center-block">
                             Inscrever-se
                         </a>   
+                    <a href='<c:url value="/FrontController?ctrl=CancelInscricao&id_palestra=${p.id_palestra}"></c:url>' class="btn btn-default btn-lg center-block">
+                            Cancelar Inscricao
+                        </a> 
                     </div>
                 </div>
             </div>
