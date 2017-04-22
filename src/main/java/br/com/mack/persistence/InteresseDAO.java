@@ -86,7 +86,8 @@ public class InteresseDAO implements GenericDAO<Interesse> {
     }
     
     public void registrarInteresseByPalestra(long idInteresse, long idPalestra){
-        String sql = "INSERT INTO palestra_interesse(id_palestra, id_interesse) VALUES(?,?)";
+        System.out.println("Entrou no registrarInteresseByPalestra()");
+        String sql = "insert into palestra_interesse values(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, idPalestra);
@@ -94,6 +95,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
         }catch(SQLException ex){
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);            
         }
+        System.out.println("Saiu do registrarInteresseByPalestra()");
     }
     
     public void registrarInteresseByInscricao(long idInteresse, long idInscricao){
