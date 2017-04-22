@@ -86,7 +86,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
     }
     
     public void registrarInteresseByPalestra(long idInteresse, long idPalestra){
-        String sql = "INSERT INTO palestra_interesse(id_Palestra, id_organizador) VALUES(?,?);";
+        String sql = "INSERT INTO palestra_interesse(id_palestra, id_interesse) VALUES(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, idPalestra);

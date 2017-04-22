@@ -25,14 +25,14 @@ public class ValidaRegistroController extends AbstractController{
         palestra.setCodigo(codigo);
         palestra.setId_organizador(id_organizador);
         
-        //Setando nova palestra na sessão - somente após definir os interesses relacionados à ela que a mesma será presistida no banco de dados
+        //Setando nova palestra na sessão - somente após definir os interesses relacionados à ela que a mesma será persistida no banco de dados
         this.getRequest().getSession().setAttribute("palestra_pendente", palestra);        
         
         //Pegando lista de interesses do banco
         List<Interesse> interesses = interesseDAO.readAll();
         
-        //Setando lista de interesses na sessão (simulando para teste)
-        this.getRequest().getSession().setAttribute("interesses", interesseDAO.readAll());
+        //Setando lista de interesses na sessão
+        this.getRequest().getSession().setAttribute("interesses", interesses);
         
         this.setReturnPage("organizador_area/palestra_interesses.jsp");
     }

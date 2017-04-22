@@ -17,7 +17,7 @@
                         <br/>
                         <input type="hidden" value="ValidaRegistro" name="ctrl">
                         <input type="submit" value="PRÓXIMO" class="btn btn-default btn-lg center-block">
-                    </for    
+                    </form>   
                 </div>
             </div>
         </div>
