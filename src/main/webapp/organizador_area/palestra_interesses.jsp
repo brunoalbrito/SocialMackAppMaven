@@ -24,7 +24,7 @@
                         <div class="row">
                         
                             <c:forEach items="${interesses}" var="i">
-                                <div class="col-sm-12 col-md-4 col-lg-2">
+                                <div class="com-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <div class="input-group">
                                         <span class="input-group-addon">
                                             <input type="checkbox" aria-label="..." name="interesse" value="${i.id}">
@@ -43,8 +43,8 @@
                 </div>
                 
                 <div class="panel-footer">
-                     <form class="form-inline center-block" method="post" action="${pageContext.request.contextPath}/FrontController">
-                        <div class="input-group">
+                     <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
+                        <div class="input-group center-block">
                             <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
                             <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
                         </div>
