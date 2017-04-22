@@ -119,5 +119,19 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void cancelRegisterInPalestra(long id_participante, long id_palestra) {
+
+        String sql = "DELETE FROM inscricao WHERE id_participante=? AND id_palestra=?";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id_participante);
+            ps.setLong(2, id_palestra);
+            ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }
