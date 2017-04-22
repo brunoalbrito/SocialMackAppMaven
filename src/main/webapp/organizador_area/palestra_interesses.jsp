@@ -18,17 +18,7 @@
                 <div class="panel-heading">
                     Interesses da Palestra "${palestra_pendente.tema}"
                 </div>
-                <div class="panel-body">
-                
-                    <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
-                        <div class="col-sm-12 com-md-3 col-lg-2">
-                            <div class="input-group">
-                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
-                                <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
-                            </div>
-                            <input type="hidden" name="ctrl" value="AddInteresse">                            
-                        </div>
-                    </form>
+                <div class="panel-body">                 
                 
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController" class="form-inline">
                         
@@ -41,11 +31,26 @@
                                     <input type="text" class="form-control" aria-label="..." readonly="readonly" disabled="disabled" value="${i.descricao}" title="Interesse">
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->                      
-                        </c:forEach>                      
+                        </c:forEach>    
+                        
                         <input type="hidden" name="ctrl" value="RegistrarPalestra">
                         <input type="submit" value="CADASTRAR">
+                        
                     </form>
                 </div>
+                
+                <div class="panel-footer">
+                     <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
+                        <div class="col-sm-12 com-md-3 col-lg-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
+                                <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
+                            </div>
+                            <input type="hidden" name="ctrl" value="AddInteresse">                            
+                        </div>
+                    </form>
+                </div>
+                
             </div>
         </div>
     </div>
