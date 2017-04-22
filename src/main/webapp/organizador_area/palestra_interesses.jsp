@@ -43,11 +43,10 @@
                 </div>
                 
                 <div class="panel-footer">
-                     <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
-                        <div class="input-group center-block">
-                            <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
-                            <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
-                        </div>
+                     <form class="center-block" method="post" action="${pageContext.request.contextPath}/FrontController">
+                        <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
+                        <br/>
+                        <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
                         <input type="hidden" name="ctrl" value="AddInteresse">
                     </form>
                 </div>
