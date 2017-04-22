@@ -18,7 +18,7 @@
                 <div class="panel-heading">
                     Interesses da Palestra "${palestra_pendente.tema}"
                 </div>
-                <div class="panel-body">                                 
+                <div class="panel-body center-block">                                 
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController" class="form-inline">
                         
                         <div class="row">
@@ -36,7 +36,7 @@
                         
                         </div>
                         
-                        <input type="hidden" name="ctrl" value="RegistrarPalestra" class="center-block">
+                        <input type="hidden" name="ctrl" value="RegistrarPalestra">
                         <input type="submit" value="CADASTRAR">
                         
                     </form>
@@ -45,7 +45,6 @@
                 <div class="panel-footer">
                      <form class="center-block" method="post" action="${pageContext.request.contextPath}/FrontController">
                         <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
-                        <br/>
                         <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
                         <input type="hidden" name="ctrl" value="AddInteresse">
                     </form>
