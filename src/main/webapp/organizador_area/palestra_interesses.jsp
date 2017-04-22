@@ -18,20 +18,23 @@
                 <div class="panel-heading">
                     Interesses da Palestra "${palestra_pendente.tema}"
                 </div>
-                <div class="panel-body">                 
-                
+                <div class="panel-body">                                 
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController" class="form-inline">
                         
-                        <c:forEach items="${interesses}" var="i">
-                            <div class="col-lg-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="checkbox" aria-label="..." name="interesse" value="${i.id}">
-                                    </span>
-                                    <input type="text" class="form-control" aria-label="..." readonly="readonly" disabled="disabled" value="${i.descricao}" title="Interesse">
-                                </div><!-- /input-group -->
-                            </div><!-- /.col-lg-6 -->                      
-                        </c:forEach>    
+                        <div class="row">
+                        
+                            <c:forEach items="${interesses}" var="i">
+                                <div class="col-sm-12 col-md-4 col-lg-2">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" aria-label="..." name="interesse" value="${i.id}">
+                                        </span>
+                                        <input type="text" class="form-control" aria-label="..." readonly="readonly" disabled="disabled" value="${i.descricao}" title="Interesse">
+                                    </div><!-- /input-group -->
+                                </div><!-- /.col-lg-6 -->                      
+                            </c:forEach>    
+                        
+                        </div>
                         
                         <input type="hidden" name="ctrl" value="RegistrarPalestra">
                         <input type="submit" value="CADASTRAR">
@@ -40,14 +43,12 @@
                 </div>
                 
                 <div class="panel-footer">
-                     <form class="form-inline" method="post" action="${pageContext.request.contextPath}/FrontController">
-                        <div class="col-sm-12 com-md-3 col-lg-2">
-                            <div class="input-group">
-                                <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
-                                <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
-                            </div>
-                            <input type="hidden" name="ctrl" value="AddInteresse">                            
+                     <form class="form-inline center-block" method="post" action="${pageContext.request.contextPath}/FrontController">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  title="Interesse" placeholder="Interesse" required="required" name="novo_interesse">
+                            <input type="submit" value="ADD" title="Adicionar interesse..." class="btn btn-default btn-lg center-block">
                         </div>
+                        <input type="hidden" name="ctrl" value="AddInteresse">
                     </form>
                 </div>
                 
