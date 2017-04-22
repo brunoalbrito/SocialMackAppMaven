@@ -36,7 +36,7 @@
                         
                         </div>
                         
-                        <input type="hidden" name="ctrl" value="RegistrarPalestra">
+                        <input type="hidden" name="ctrl" value="RegistrarPalestra" class="center-block">
                         <input type="submit" value="CADASTRAR">
                         
                     </form>
