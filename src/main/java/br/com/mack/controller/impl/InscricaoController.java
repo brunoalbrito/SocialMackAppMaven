@@ -11,25 +11,28 @@ import java.util.logging.Logger;
 
 public class InscricaoController extends AbstractController {
 
-    PalestraDAO palestraDAO = new PalestraDAO();
-    @Override
-    public void execute() {
-        Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
-        long id_participante = participante.getId_pessoa();
-
-        long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
-        
-        long codigo = Long.parseLong(getRequest().getParameter("codigo"));
-        
-        String tema = getRequest().getParameter("tema");
-        
-        String email = participante.getEmail();
-        try {
-            palestraDAO.registerInPalestra(id_participante,id_palestra);
-            EmailDispatcherPalestra.sendEmail(email,tema,codigo);
-        } catch (Exception ex) {
-            Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        setReturnPage("user_area/home.jsp");
-    }
+   PalestraDAO palestraDAO = new PalestraDAO();
+   @Override
+   public void execute() {
+       Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
+       
+       
+       long id_participante = participante.getId_pessoa();
+       
+       String email = participante.getEmail();
+       
+       long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+       
+       String tema = getRequest().getParameter("tema");
+       
+       long codigo = Long.parseLong(getRequest().getParameter("codigo"));
+       
+       try {
+           palestraDAO.registerInPalestra(id_participante,id_palestra);
+           EmailDispatcherPalestra.sendEmail(email,tema,codigo);
+       } catch (Exception ex) {
+           Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       setReturnPage("user_area/home.jsp");
+   }
 }

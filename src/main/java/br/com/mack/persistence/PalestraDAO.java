@@ -1,6 +1,8 @@
 package br.com.mack.persistence;
 
 import br.com.mack.persistence.entities.Palestra;
+import br.com.mack.persistence.entities.Participante;
+import br.com.mack.persistence.entities.Pessoa;
 import br.com.mack.singletonconnection.SingletonConnection;
 
 import java.sql.Connection;
@@ -106,6 +108,34 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     }
 
+    public List<Participante> readUsersPalestra(long id_palestra) {
+        
+        List<Participante> participantes = new ArrayList();
+        
+        String sql = "select pessoa.nome from inscricao inner join participante on inscricao.id_participante = participante.id_pessoa inner join pessoa on participante.id_pessoa = pessoa.id where inscricao.id_palestra = ?";
+        
+        PreparedStatement ps;
+        
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setLong(1, id_palestra);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                Participante pessoa = new Participante();
+                pessoa.setNome(rs.getString("nome"));
+                participantes.add(pessoa);
+            }
+            rs.close();
+            ps.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return participantes;
+    }
+    
+    
     public void registerInPalestra(long id_participante, long id_palestra) {
 
         String sql = "INSERT INTO inscricao(id_participante,id_palestra)VALUES(?,?)";
