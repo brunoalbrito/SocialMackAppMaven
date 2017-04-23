@@ -68,6 +68,7 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
                 p.setCelular(rs.getString("celular"));
                 p.setSenha(rs.getString("senha"));
                 p.setCurso(rs.getString("curso"));
+                p.setFoto(rs.getBytes("foto"));
             }
 
             rs.close();
