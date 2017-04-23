@@ -15,9 +15,18 @@ public class InscricaoController extends AbstractController {
    @Override
    public void execute() {
        Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
+       
+       
        long id_participante = participante.getId_pessoa();
-
+       
+       String email = participante.getEmail();
+       
        long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+       
+       String tema = getRequest().getParameter("tema");
+       
+       long codigo = Long.parseLong(getRequest().getParameter("codigo"));
+       
        try {
            palestraDAO.registerInPalestra(id_participante,id_palestra);
            EmailDispatcherPalestra.sendEmail(email,tema,codigo);
