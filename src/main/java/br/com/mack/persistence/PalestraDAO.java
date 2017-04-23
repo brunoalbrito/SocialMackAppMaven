@@ -2,6 +2,7 @@ package br.com.mack.persistence;
 
 import br.com.mack.persistence.entities.Palestra;
 import br.com.mack.persistence.entities.Participante;
+import br.com.mack.persistence.entities.Pessoa;
 import br.com.mack.singletonconnection.SingletonConnection;
 
 import java.sql.Connection;
