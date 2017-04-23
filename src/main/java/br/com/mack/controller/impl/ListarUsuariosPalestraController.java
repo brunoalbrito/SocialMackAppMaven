@@ -19,7 +19,7 @@ public class ListarUsuariosPalestraController extends AbstractController {
 
         List<Participante> participantes = null;
 
-        long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+        long id_palestra = Long.parseLong(getRequest().getParameter("idPalestra"));
         
         try {
             palestraDAO.readUsersPalestra(id_palestra);
