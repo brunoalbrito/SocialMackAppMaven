@@ -22,7 +22,7 @@ public class ListarUsuariosPalestraController extends AbstractController {
         long id_palestra = Long.parseLong(getRequest().getParameter("idPalestra"));
         
         try {
-            palestraDAO.readUsersPalestra(id_palestra);
+            participantes = palestraDAO.readUsersPalestra(id_palestra);
         } catch (Exception ex) {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
