@@ -27,6 +27,6 @@ public class ListarUsuariosPalestraController extends AbstractController {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
         getRequest().getSession().setAttribute("participantes", participantes);
-        setReturnPage("user_area/listar_usuarios.jsp");
+        setReturnPage("organizador_area/listar_usuarios.jsp");
     }
 }
