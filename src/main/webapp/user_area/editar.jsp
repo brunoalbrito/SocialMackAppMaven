@@ -7,7 +7,7 @@
         <title>Editar</title>
     </head>
     <body>
-        <form action="${pageContext.request.contextPath}/FrontController" method="POST">
+        <form action="${pageContext.request.contextPath}/FrontController?ctrl=AlterarParticipante" method="POST" enctype="multipart/form-data">
             <c:out value="${participante.senha}"></c:out>
                 <p>
                     <label for="id">id:</label><br>
@@ -55,6 +55,10 @@
                     </p>
                 </c:otherwise>
             </c:choose>
+            <p>
+                <label for="img">Imagem:</label><br>
+                <input type="file" id="imagem" name="imagem"/>
+            </p>
             <input type="hidden" name="ctrl" value="AlterarParticipante"/>
             <p>
                 <input type="submit" value="Alterar"/>
