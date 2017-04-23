@@ -124,7 +124,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             while (rs.next()) {
                 Pessoa pessoa = new Pessoa();
                 pessoa.setNome(rs.getString("nome"));
-                participantes.add(pessoa);
+                participantes.add((Participante)pessoa);
             }
             rs.close();
             ps.close();
