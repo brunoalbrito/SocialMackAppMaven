@@ -8,8 +8,10 @@ import br.com.mack.email.EmailDispatcherPalestra;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
-public class InscricaoController extends AbstractController {
+public class ListarUsuariosPalestraController extends AbstractController {
 
     PalestraDAO palestraDAO = new PalestraDAO();
     @Override

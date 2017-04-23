@@ -129,5 +129,19 @@ public class PalestraDAO implements GenericDAO<Palestra> {
         }
         return participantes;
     }
+    
+    public void registerInPalestra(long id_participante, long id_palestra) {
+
+        String sql = "INSERT INTO inscricao(id_participante,id_palestra)VALUES(?,?)";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id_participante);
+            ps.setLong(2, id_palestra);
+            ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }
