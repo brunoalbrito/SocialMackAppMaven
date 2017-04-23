@@ -1,42 +1,42 @@
 package br.com.mack.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import br.com.mack.controller.Controller;
 import br.com.mack.controller.ControllerFactory;
+import javax.servlet.annotation.MultipartConfig;
 
 @WebServlet(name = "FrontController", urlPatterns = {"/FrontController"})
+@MultipartConfig
 public class FrontController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                
+
         /*PrintWriter out = response.getWriter(); 
         response.setContentType("text/html"); 
         out.println("<H1>Hello from a Servlet</h2>"); 
         out.println("<P>Courtesy of FrontController ");*/
         
         request.setCharacterEncoding("UTF-8");
-        
+
         String ctrl = request.getParameter("ctrl");
-        
+
         Controller controller = ControllerFactory.getInstanceByName(ctrl);
-        
+
         String page = "erro.jsp";
-        if(controller!=null){
+        if (controller != null) {
             controller.init(request, response);
             controller.execute();
             page = controller.getReturnPage();
         }
-        
+
         response.sendRedirect(page);
-        
+
     }
 
     @Override
@@ -45,7 +45,6 @@ public class FrontController extends HttpServlet {
         processRequest(request, response);
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

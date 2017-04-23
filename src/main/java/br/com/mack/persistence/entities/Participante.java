@@ -2,17 +2,12 @@ package br.com.mack.persistence.entities;
 
 import java.io.Serializable;
 
+public class Participante extends Pessoa implements Serializable {
 
-public class Participante extends Pessoa implements Serializable{
-  
     private String curso;
-    
-    public Participante() {
-    }
+    private byte[] foto;
 
-    public Participante(String curso, long id_pessoa,String nome, String email, String senha, String celular) {
-        super(id_pessoa,nome, email, senha, celular);
-        this.curso = curso;
+    public Participante() {
     }
 
     public String getCurso() {
@@ -23,11 +18,17 @@ public class Participante extends Pessoa implements Serializable{
         this.curso = curso;
     }
 
-    @Override
-    public String toString() {
-        super.toString();
-        return "Participante{" + "curso=" + curso + '}';
+    public byte[] getFoto() {
+        return foto;
     }
 
-   
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    @Override
+    public String toString() {
+        return "Participante{" + "curso=" + curso + ", foto=" + foto != null ? "Preenchido" : "Vazio" + '}';
+    }
+
 }
