@@ -108,9 +108,13 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     }
 
     public List<Participante> readUsersPalestra(long id_palestra) {
+        
         List<Participante> participantes = new ArrayList();
-        String sql = "SELECT pessoa.nome FROM inscricao INNER JOIN pessoa ON id_participante = inscricao.id_participante WHERE inscricao.id_palestra = (?)";
+        
+        String sql = "SELECT id_participante FROM inscricao INNER JOIN pessoa ON id_participante = inscricao.id_participante WHERE inscricao.id_palestra = (?)";
+        
         PreparedStatement ps;
+        
         try {
             ps = connection.prepareStatement(sql);
             ps.setLong(1, id_palestra);
@@ -129,6 +133,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
         }
         return participantes;
     }
+    
     
     public void registerInPalestra(long id_participante, long id_palestra) {
 
