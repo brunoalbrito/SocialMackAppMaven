@@ -8,10 +8,11 @@
     </head>
     <body>
         <form action="${pageContext.request.contextPath}/FrontController?ctrl=AlterarParticipante" method="POST" enctype="multipart/form-data">
-            <c:out value="${participante.senha}"></c:out>
-                <p>
-                    <label for="id">id:</label><br>
-                    <input type="text" id="id" name="id" value="${participante.id_pessoa}" readonly/>
+            <img src="${pageContext.request.contextPath}/imagens/${participante.id_pessoa}" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
+
+            <p>
+                <label for="id">id:</label><br>
+                <input type="text" id="id" name="id" value="${participante.id_pessoa}" readonly/>
             </p>
             <p>
                 <label for="name">Nome:</label><br>
