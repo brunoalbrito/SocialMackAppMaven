@@ -17,16 +17,24 @@ public class RegistrarPalestraController extends AbstractController{
     
     public void execute(){
         String[] interesses = this.getRequest().getParameterValues("interesse");
+        
         if(interesses.length > 0){
+            
             Palestra novaPalestra = (Palestra)this.getRequest().getSession().getAttribute("palestra_pendente");
-            System.out.println("Palestra após persistência: " + novaPalestra.getId_palestra());
+            
             daoPalestra.create(novaPalestra);
-            System.out.println("Interesses");
+            
+            long idPalestra = novaPalestra.getId_palestra();
+            
             for(String id:interesses){
-                System.out.println(id);
                 long interesseId = Long.parseLong(id);
-                daoInteresse.registrarInteresseByPalestra(interesseId, novaPalestra.getId_palestra());
+                daoInteresse.registrarInteresseByPalestra(interesseId, idPalestra);
             }
+            
+            //Removendo palestra_pendente e lista de interesses da sessão, bem como message_error (caso exista)
+            this.getRequest().getSession().removeAttribute("palestra_pendente");
+            this.getRequest().getSession().removeAttribute("interesses");
+            this.getRequest().getSession().removeAttribute("error_message");
             
             this.setReturnPage("organizador_area/cadastro_palestra.jsp");
         }else{

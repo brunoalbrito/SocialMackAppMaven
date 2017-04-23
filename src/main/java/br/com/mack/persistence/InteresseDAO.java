@@ -18,7 +18,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
 
     @Override
     public void create(Interesse interesse) {
-        String sql = "insert into interesse(descricao)values(?)";
+        String sql = "INSERT INTO interesse(descricao) VALUES(?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, interesse.getDescricao());
@@ -68,6 +68,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
             ps.setString(1, interesse.getDescricao());
             ps.setLong(2, interesse.getId());
             ps.execute();
+            ps.close();
         }catch(SQLException ex){
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);            
         }
@@ -80,28 +81,33 @@ public class InteresseDAO implements GenericDAO<Interesse> {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, interesse.getId());
             ps.execute();
+            ps.close();
         }catch(SQLException ex){
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);            
         } 
     }
     
     public void registrarInteresseByPalestra(long idInteresse, long idPalestra){
-        String sql = "INSERT INTO palestra_interesse VALUES(?,?);";
+        String sql = "insert into palestra_interesse values(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, idPalestra);
             ps.setLong(2, idInteresse);
+            ps.execute();            
+            ps.close();
         }catch(SQLException ex){
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);            
         }
     }
     
     public void registrarInteresseByInscricao(long idInteresse, long idInscricao){
-        String sql = "INSERT INTO inscricao_interesse VALUES(?,?)";
+        String sql = "INSERT INTO inscricao_interesse(id_Inscricao, id_Interesse) VALUES(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, idInscricao);
             ps.setLong(2, idInteresse);
+            ps.execute();            
+            ps.close();
         }catch(SQLException ex){
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);            
         }
