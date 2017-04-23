@@ -11,7 +11,7 @@
                     ${p.tema} 
                 </div> 
                 <div class="panel-footer">
-                    <a href="<c:url value="/FrontController?ctrl=ListaUsuariosPalestra&idPalestra=${p.id_palestra}"/>" class="btn btn-default btn-lg center-block"> 
+                    <a href="<c:url value="/FrontController?ctrl=ListarUsuariosPalestra&idPalestra=${p.id_palestra}"/>" class="btn btn-default btn-lg center-block"> 
                         Listar Participantes 
                     </a> 
                 </div> 
