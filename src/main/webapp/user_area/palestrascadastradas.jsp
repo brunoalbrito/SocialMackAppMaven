@@ -15,6 +15,7 @@
                 </div>
                 <div class="panel-body">             
                     <p>Tema da Palestra: ${p.tema}</p>
+                    <p>Código da Palestra: ${p.codigo}</p>
                 </div>
                 <div class="panel-footer">
                         <a href='<c:url value="/FrontController?ctrl=CancelInscricao&id_palestra=${p.id_palestra}"></c:url>' class="btn btn-default btn-lg center-block">
