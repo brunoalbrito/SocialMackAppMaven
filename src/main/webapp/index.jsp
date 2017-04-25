@@ -8,6 +8,8 @@
 <div class="row">
     <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
         <div class="panel panel-default">
+        <h1>Teste</h1>
+        <h1>João</h1>
             <div class="panel-heading">
                 LOGIN
             </div>
