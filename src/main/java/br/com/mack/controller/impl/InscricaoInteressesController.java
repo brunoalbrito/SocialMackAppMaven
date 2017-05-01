@@ -29,7 +29,7 @@ public class InscricaoInteressesController extends AbstractController{
         palestraInteresse.setId_organizador(id_organizador);
         
         //Setando nova palestra na sessão - somente após definir os interesses relacionados à ela que a mesma será persistida no banco de dados
-        this.getRequest().getSession().setAttribute("palestraInteresse", palestra);
+        this.getRequest().getSession().setAttribute("palestraInteresse", palestraInteresse);
         
         //Pegando lista de interesses do banco
         List<Interesse> interessesInscricao = interesseDAO.readByIdPalestra(id_palestra);
