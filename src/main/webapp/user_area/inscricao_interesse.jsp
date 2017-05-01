@@ -23,7 +23,7 @@
                         
                         <div class="row">
                         
-                            <c:forEach items="${interesses}" var="i">
+                            <c:forEach items="${interessesInscricao}" var="i">
                                 <div class="com-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <div class="input-group">
                                         <span class="input-group-addon">

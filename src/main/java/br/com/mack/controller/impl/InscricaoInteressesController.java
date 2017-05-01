@@ -21,6 +21,7 @@ public class InscricaoInteressesController extends AbstractController{
         int codigo = Integer.parseInt(this.getRequest().getParameter("codigo"));
         long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
         
+        
         //Pegando lista de interesses do banco
         List<Interesse> interessesInscricao = interesseDAO.readByIdPalestra(id_palestra);
         
