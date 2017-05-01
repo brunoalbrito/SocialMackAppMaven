@@ -18,11 +18,11 @@
                 </div>
                 <div class="panel-footer">
                     <a href='<c:url value="/FrontController?ctrl=InscricaoInteresses&id_palestra=${p.id_palestra}&tema=${p.tema}&codigo=${p.codigo}"></c:url>' class="btn btn-default btn-lg center-block">
-                            Inscrever-se
-                        </a>
-                    </div>
+                        Inscrever-se
+                    </a>
                 </div>
             </div>
+        </div>
 
     </c:forEach>
 </div>

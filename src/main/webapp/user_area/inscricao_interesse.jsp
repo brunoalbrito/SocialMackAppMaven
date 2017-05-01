@@ -16,7 +16,7 @@
         
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Interesses da Palestra "${palestra.tema}"
+                    Interesses da Palestra "${p.tema}"
                 </div>
                 <div class="panel-body center-block">                                 
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController" class="form-inline">
