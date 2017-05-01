@@ -20,7 +20,14 @@ public class InscricaoInteressesController extends AbstractController{
         String tema = this.getRequest().getParameter("tema");
         int codigo = Integer.parseInt(this.getRequest().getParameter("codigo"));
         long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+        long id_organizador = ((Organizador) getRequest().getSession().getAttribute("organizador")).getId_pessoa();
+        Palestra palestra = new Palestra();
+        palestra.setTema(tema);
+        palestra.setCodigo(codigo);
+        palestra.setId_organizador(id_organizador);
      
+        //Setando nova palestra na sessão - somente após definir os interesses relacionados à ela que a mesma será persistida no banco de dados
+        this.getRequest().getSession().setAttribute("palestra_pendente", palestra);     
         
         //Pegando lista de interesses do banco
         List<Interesse> interesses = interesseDAO.readByIdPalestra(id_palestra);
