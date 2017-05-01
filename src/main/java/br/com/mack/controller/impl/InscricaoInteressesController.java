@@ -27,6 +27,7 @@ public class InscricaoInteressesController extends AbstractController{
         
         //Setando lista de interesses na sessão
         this.getRequest().getSession().setAttribute("interessesInscricao", interessesInscricao);
+        this.getRequest().getSession().setAttribute("tema", tema);
         
         this.setReturnPage("user_area/inscricao_interesse.jsp");
     }
