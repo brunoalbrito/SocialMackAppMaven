@@ -16,13 +16,13 @@
                     </a>               
                 </div> 
                 <div class="panel-footer">
-                    <a href="<c:url value="/FrontController?ctrl=AlterarPalestra&idPalestra=${p.id_palestra}"/>" class="btn btn-default btn-lg center-block"> 
-                        Listar Participantes 
-                    </a>               editar_palestra.jsp
+                    <a href="<c:url value="editar_palestra.jsp?idPalestra=${p.id_palestra}"/>" class="btn btn-default btn-lg center-block"> 
+                        Alterar Palestra 
+                    </a>               
                 </div> 
                 <div class="panel-footer">
                     <a href="<c:url value="/FrontController?ctrl=DeletarPalestra&idPalestra=${p.id_palestra}"/>" class="btn btn-default btn-lg center-block"> 
-                        Listar Participantes 
+                        Deletar Palestra 
                     </a>              
                 </div> 
             </div> 
