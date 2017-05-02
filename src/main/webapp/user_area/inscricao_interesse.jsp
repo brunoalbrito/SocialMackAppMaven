@@ -44,6 +44,6 @@
                 </div>
             </div>
         </div>
-    </>
+    </div>
 
 <c:import url="../template/footer_post_login.jsp"/>
