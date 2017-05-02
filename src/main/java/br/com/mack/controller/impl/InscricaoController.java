@@ -3,6 +3,7 @@ package br.com.mack.controller.impl;
 import br.com.mack.controller.AbstractController;
 import br.com.mack.persistence.PalestraDAO;
 import br.com.mack.persistence.entities.Participante;
+import br.com.mack.persistence.entities.Palestra;
 import br.com.mack.persistence.InteresseDAO;
 
 import br.com.mack.email.EmailDispatcherPalestra;
@@ -21,14 +22,14 @@ public class InscricaoController extends AbstractController {
                   
         long id_participante = participante.getId_pessoa();
         String email = participante.getEmail();
-        long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+        Palestra palestra = (Palestra)this.getRequest().getSession().getAttribute("palestra");
         String tema = getRequest().getParameter("tema");
         long codigo = Long.parseLong(getRequest().getParameter("codigo"));
         
         try {
            if (interesses.length > 0) {
                
-                long id_inscricao = palestraDAO.registerInPalestra(id_participante,id_palestra);
+                long id_inscricao = palestraDAO.registerInPalestra(id_participante,palestra.getId_palestra());
                 for(String interesse : interesses) {
                         
                 interesseDAO.registrarInteresseByInscricao(Long.parseLong(interesse), id_inscricao);
