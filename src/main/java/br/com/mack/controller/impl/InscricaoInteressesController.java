@@ -25,6 +25,8 @@ public class InscricaoInteressesController extends AbstractController{
         //Pegando lista de interesses do banco
         List<Interesse> interessesInscricao = interesseDAO.readByIdPalestra(id_palestra);
         
+        System.out.println(interessesInscricao.size());
+        
         //Setando lista de interesses na sessão
         this.getRequest().getSession().setAttribute("interessesInscricao", interessesInscricao);
         this.getRequest().getSession().setAttribute("id_palestra", id_palestra);
