@@ -62,10 +62,11 @@ public class InteresseDAO implements GenericDAO<Interesse> {
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id_palestra);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Interesse interessesInscricao = new Interesse();
-                interessesInscricao.setId(id_palestra);
+                interessesInscricao.setId(rs.getLong("id_palestra"));
                 interessesInscricao.setDescricao(rs.getString("descricao"));
                 interesses.add(interessesInscricao);
             }
