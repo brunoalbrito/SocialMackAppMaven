@@ -58,15 +58,20 @@ public class InteresseDAO implements GenericDAO<Interesse> {
     public List<Interesse> readByIdPalestra(long id_palestra) {
         List<Interesse> interesses = new ArrayList<Interesse>();
         
-        String sql = "SELECT descricao FROM interesse INNER JOIN palestra_interesse ON interesse.id = palestra_interesse.id_interesse WHERE id_palestra = ?";
+        String sql = "SELECT * FROM interesse INNER JOIN palestra_interesse ON interesse.id = palestra_interesse.id_interesse WHERE id_palestra = ?";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id_palestra);
             ResultSet rs = ps.executeQuery();
+            System.out.println("**********************************Antes do while");
             while (rs.next()) {
+                
+            System.out.println("**********************************Antes do while");
+            
+            
                 Interesse interessesInscricao = new Interesse();
-                interessesInscricao.setId(rs.getLong("id_palestra"));
+                interessesInscricao.setId(rs.getLong("id"));
                 interessesInscricao.setDescricao(rs.getString("descricao"));
                 interesses.add(interessesInscricao);
             }
