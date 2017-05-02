@@ -16,15 +16,15 @@
         
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Interesses da Palestra "${palestraInteresse.tema}"
-                    Código da Palestra "${palestraInteresse.codigo}"
+                    Interesses da Palestra "${tema}" <br/>
+                    Código da Palestra "${codigo}"
                 </div>
                 <div class="panel-body center-block">                                 
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController" class="form-inline">
                         
                         <div class="row">
                         
-                            <c:forEach items="${interesses}" var="i">
+                            <c:forEach items="${interessesInscricao}" var="i">
                                 <div class="com-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <div class="input-group">
                                         <span class="input-group-addon">
