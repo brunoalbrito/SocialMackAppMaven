@@ -25,7 +25,7 @@ public class InscricaoController extends AbstractController {
         Palestra palestra = (Palestra)this.getRequest().getSession().getAttribute("palestra");
         String tema = getRequest().getParameter("tema");
         System.out.println ("*********************************passou pelo tema");
-        int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
+        int codigo = Integer.parseInt(this.getRequest().getParameter("codigo"));
         System.out.println("***********************************passou pelo codigo" + codigo);
         
         
