@@ -64,12 +64,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id_palestra);
             ResultSet rs = ps.executeQuery();
-            System.out.println("**********************************Antes do while");
             while (rs.next()) {
-                
-            System.out.println("**********************************Antes do while");
-            
-            
                 Interesse interessesInscricao = new Interesse();
                 interessesInscricao.setId(rs.getLong("id"));
                 interessesInscricao.setDescricao(rs.getString("descricao"));
@@ -128,12 +123,12 @@ public class InteresseDAO implements GenericDAO<Interesse> {
         }
     }
     
-    public void registrarInteresseByInscricao(long idInteresse, long idInscricao){
-        String sql = "INSERT INTO inscricao_interesse(id_Inscricao, id_Interesse) VALUES(?,?)";
+    public void registrarInteresseByInscricao(long id_interesse, long id_inscricao){
+        String sql = "INSERT INTO inscricao_interesse VALUES(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setLong(1, idInscricao);
-            ps.setLong(2, idInteresse);
+            ps.setLong(1, id_inscricao);
+            ps.setLong(2, id_interesse);
             ps.execute();            
             ps.close();
         }catch(SQLException ex){
