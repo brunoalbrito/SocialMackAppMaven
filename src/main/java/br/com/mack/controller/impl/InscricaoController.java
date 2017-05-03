@@ -24,7 +24,7 @@ public class InscricaoController extends AbstractController {
         String email = participante.getEmail();
         Palestra palestra = (Palestra)this.getRequest().getSession().getAttribute("palestra");
         String tema = getRequest().getParameter("tema");
-        long codigo = Long.parseLong(getRequest().getParameter("codigo"));
+        int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         
         try {
            if (interesses.length > 0) {
