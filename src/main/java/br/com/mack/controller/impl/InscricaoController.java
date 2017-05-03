@@ -26,10 +26,14 @@ public class InscricaoController extends AbstractController {
         String tema = getRequest().getParameter("tema");
         System.out.println ("*********************************passou pelo tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
+        System.out.println("***********************************passou pelo codigo" + codigo);
+        
         
         try {
+           System.out.println("*********************************************Entrou no try");
            if (interesses.length > 0) {
                
+           System.out.println("*********************************************entrou no if");
                 long id_inscricao = palestraDAO.registerInPalestra(id_participante,palestra.getId_palestra());
                 for(String interesse : interesses) {
                         
