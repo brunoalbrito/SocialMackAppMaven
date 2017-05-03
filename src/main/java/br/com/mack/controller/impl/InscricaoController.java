@@ -31,10 +31,10 @@ public class InscricaoController extends AbstractController {
            if (interesses.length > 0) {
                
                 long id_inscricao = palestraDAO.registerInPalestra(id_participante,palestra.getId_palestra());
+                System.out.println("********************************ID INSCRICAO" + id_inscricao);
                 for(String interesse : interesses) {
-                        System.out.println("********************************************" + Long.parseLong(interesse));
-                interesseDAO.registrarInteresseByInscricao(Long.parseLong(interesse), id_inscricao);
-                
+
+                    interesseDAO.registrarInteresseByInscricao(Long.parseLong(interesse), id_inscricao);
                 
                }
                 EmailDispatcherPalestra.sendEmail(email,tema,codigo);
