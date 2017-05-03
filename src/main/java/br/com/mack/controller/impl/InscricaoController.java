@@ -28,13 +28,11 @@ public class InscricaoController extends AbstractController {
         
         
         try {
-           System.out.println("*********************************************Entrou no try");
            if (interesses.length > 0) {
                
-           System.out.println("*********************************************entrou no if");
                 long id_inscricao = palestraDAO.registerInPalestra(id_participante,palestra.getId_palestra());
                 for(String interesse : interesses) {
-                        
+                        System.out.println("********************************************" + Long.parseLong(interesse));
                 interesseDAO.registrarInteresseByInscricao(Long.parseLong(interesse), id_inscricao);
                 
                 
