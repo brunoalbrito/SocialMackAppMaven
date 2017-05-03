@@ -152,7 +152,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             
             ps.close();
             teste = keys.getInt(1);
-            System.out.println("************************************Passou pelo teste dentro do try")
+            System.out.println("************************************Passou pelo teste dentro do try");
         } catch (SQLException ex) {
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
