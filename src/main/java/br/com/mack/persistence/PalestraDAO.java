@@ -153,9 +153,10 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             return keys.getInt(1);
         } catch (SQLException ex) {
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+                    return -1;
         }
         
-        return -1;
+
     }
     
     
