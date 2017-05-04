@@ -153,6 +153,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             
             ps.close();
         } catch (SQLException ex) {
+            System.out.println("Deu ruim ao tentar pegar a key gerada!");
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return id;
