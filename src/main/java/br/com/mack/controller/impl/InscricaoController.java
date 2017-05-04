@@ -29,7 +29,7 @@ public class InscricaoController extends AbstractController {
         try {
            if (interesses.length > 0) {
                
-                long id_inscricao = palestraDAO.registerInPalestra(id_participante,palestra.getId_palestra());
+                long id_inscricao = palestraDAO.registerInPalestra(palestra.getId_palestra(),id_participante);
                 System.out.println("********************************ID INSCRICAO" + id_inscricao);
                 for(String interesse : interesses) {
 

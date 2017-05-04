@@ -136,7 +136,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     }
     
     
-    public long registerInPalestra(long id_participante, long id_palestra) {
+    public long registerInPalestra(long idPalestra, long idParticipante) {
         long id = 0;
         String sql = "INSERT INTO inscricao VALUES(?,?)";
         
