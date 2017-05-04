@@ -143,11 +143,16 @@ public class PalestraDAO implements GenericDAO<Palestra> {
         int teste = -1;
         try {
             PreparedStatement ps = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            System.out.println("***********************************TESTE 1 ");
             ps.setLong(1, id_participante);
+            System.out.println("***********************************TESTE 2 ");
             ps.setLong(2, id_palestra);
+            System.out.println("***********************************TESTE 3 ");
             ps.execute();
+            System.out.println("***********************************TESTE 4 ");
             
             ResultSet keys = ps.getGeneratedKeys();
+            System.out.println("***********************************TESTE 5 ");
             keys.next();
             System.out.println("***********************************TESTE COM 1 PORRA "+keys.getInt(1));
             System.out.println("***********************************TESTE COM 1 PORRA "+keys.getInt(0));
