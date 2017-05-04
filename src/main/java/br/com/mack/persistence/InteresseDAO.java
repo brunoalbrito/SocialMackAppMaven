@@ -123,12 +123,12 @@ public class InteresseDAO implements GenericDAO<Interesse> {
         }
     }
     
-    public void registrarInteresseByInscricao(long id_interesse, long id_inscricao){
+    public void registrarInteresseByInscricao(long idInteresse, long idInscricao){
         String sql = "INSERT INTO inscricao_interesse VALUES(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setLong(1, id_inscricao);
-            ps.setLong(2, id_interesse);
+            ps.setLong(1, idInscricao);
+            ps.setLong(2, idInteresse);
             ps.execute();            
             ps.close();
         }catch(SQLException ex){
