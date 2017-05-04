@@ -17,14 +17,13 @@ public class InscricaoController extends AbstractController {
    InteresseDAO interesseDAO = new InteresseDAO();
    @Override
    public void execute() {
-       Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
-       String [] interesses = this.getRequest().getParameterValues("interesse");
-                  
+        Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
+        String [] interesses = this.getRequest().getParameterValues("interesse");
         long id_participante = participante.getId_pessoa();
         String email = participante.getEmail();
         Palestra palestra = (Palestra)this.getRequest().getSession().getAttribute("palestra");
-        String tema = getRequest().getParameter("tema");
-        Integer codigo = (Integer)this.getRequest().getSession().getAttribute("codigo");
+        String tema = palestra.getTema();
+        long codigo = palestra.getCodigo();
         
         
         try {

@@ -13,14 +13,14 @@ import java.util.logging.Logger;
 public class InscricaoInteressesController extends AbstractController{
     
     private InteresseDAO interesseDAO = new InteresseDAO();
-    Palestra palestra = new Palestra();
+    private Palestra palestra = new Palestra();
     
     public void execute(){
         
         //Pegando atributos da sessao
         String tema = this.getRequest().getParameter("tema");
-        int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
-        long id_palestra = Long.parseLong(getRequest().getParameter("id_palestra"));
+        int codigo = Integer.parseInt(this.getRequest().getParameter("codigo"));
+        long id_palestra = Long.parseLong(this.getRequest().getParameter("id_palestra"));
 
 
         palestra.setId_palestra(id_palestra);
@@ -30,9 +30,7 @@ public class InscricaoInteressesController extends AbstractController{
         //Pegando lista de interesses do banco
         List<Interesse> interessesInscricao = interesseDAO.readByIdPalestra(id_palestra);
         
-        System.out.println(interessesInscricao.size());
-        
-        //Setando lista de interesses na sessão
+        //Setando lista de interesses na sessão junto com palestra
         this.getRequest().getSession().setAttribute("interessesInscricao", interessesInscricao);
         this.getRequest().getSession().setAttribute("palestra", palestra);
         
