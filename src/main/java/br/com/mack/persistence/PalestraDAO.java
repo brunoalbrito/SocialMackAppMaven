@@ -137,33 +137,25 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     
     
     public long registerInPalestra(long id_participante, long id_palestra) {
-
+        int id = 0;
         String sql = "INSERT INTO inscricao VALUES(?,?)";
         
-        int teste = -1;
         try {
             PreparedStatement ps = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            System.out.println("***********************************TESTE 1 ");
-            ps.setLong(1, id_participante);
-            System.out.println("***********************************TESTE 2 ");
-            ps.setLong(2, id_palestra);
-            System.out.println("***********************************TESTE 3 ");
-            ps.execute();
-            System.out.println("***********************************TESTE 4 ");
             
+            ps.setLong(1, id_palestra);
+            ps.setLong(2, id_participante);
+            
+            ps.execute();
             ResultSet keys = ps.getGeneratedKeys();
-            System.out.println("***********************************TESTE 5 ");
             keys.next();
-            System.out.println("***********************************TESTE COM 1 PORRA "+keys.getInt(1));
-            System.out.println("***********************************TESTE COM 1 PORRA "+keys.getInt(0));
-            teste = keys.getInt(1);
-            System.out.println("***********************************TESTE DENTRO DO TRY LELELELE" + teste);
+            id = keys.getInt(1);
+            
             ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("*************************************TESTEEEE" + teste);
-        return teste;
+        return id;
     }
     
     
