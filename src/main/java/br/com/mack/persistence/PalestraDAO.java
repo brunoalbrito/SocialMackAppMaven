@@ -138,13 +138,13 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     
     public long registerInPalestra(long idPalestra, long idParticipante) {
         long id = 0;
-        String sql = "INSERT INTO inscricao VALUES(?,?)";
+        String sql = "INSERT INTO inscricao(id_palestra, id_participante) VALUES(?,?)";
         
         try {
             PreparedStatement ps = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             
-            ps.setLong(1, idParticipante);
-            ps.setLong(2, idPalestra);
+            ps.setLong(1, idPalestra);
+            ps.setLong(2, idParticipante);
             
             ps.execute();
             ResultSet keys = ps.getGeneratedKeys();
