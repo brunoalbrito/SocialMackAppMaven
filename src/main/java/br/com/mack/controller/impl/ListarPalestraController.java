@@ -19,9 +19,6 @@ public class ListarPalestraController extends AbstractController {
         setReturnPage("erro.jsp");
         try {
             palestras = palestraDAO.readAll();
-//            for(Palestra palestra:palestras){
-//                System.out.println(palestra);
-//            }
             setReturnPage("user_area/lista_palestras.jsp");
         } catch (Exception ex) {
             Logger.getLogger(ListarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
