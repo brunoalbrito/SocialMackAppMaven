@@ -20,14 +20,14 @@ public class AlterarPalestraController extends AbstractController {
 
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
-        //int id_organizador = (Organizador) getRequest().getSession().getAttribute("participante");
-        Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
+        int id_organizador = (Organizador) getRequest().getSession().getAttribute("participante");
+        //Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
         long id_participante = participante.getId_pessoa();
         
         Palestra p = new Palestra();
         p.setTema(tema);
         p.setCodigo(codigo);
-        p.setId_organizador(id_participante);
+        p.setId_organizador(id_organizador);
                 
         try {
             palestraDAO.update(p);
