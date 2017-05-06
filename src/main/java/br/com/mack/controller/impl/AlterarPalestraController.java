@@ -27,8 +27,8 @@ public class AlterarPalestraController extends AbstractController {
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         Organizador organizador = (Organizador) getRequest().getSession().getAttribute("organizador");
         long id_organizador = organizador.getId_pessoa();
-        Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
-        long id_participante = participante.getId_pessoa();
+        //Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
+        //long id_participante = participante.getId_pessoa();
         
         Palestra p = new Palestra();
         p.setId_palestra(id);
