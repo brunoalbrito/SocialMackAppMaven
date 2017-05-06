@@ -19,6 +19,7 @@
             </p>
 
             <input type="hidden" name="ctrl" value="AlterarPalestra"/>
+            <input type="hidden" name="id_palestra" value="${p.id_palestra}"/>
             <p>
                 <input type="submit" value="Alterar"/>
             </p>
