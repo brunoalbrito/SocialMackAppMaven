@@ -2,7 +2,7 @@ package br.com.mack.controller.impl;
 
 import br.com.mack.controller.AbstractController;
 import br.com.mack.persistence.PalestraDAO;
-import br.com.mack.persistence.entities.Participante;
+import br.com.mack.persistence.entities.Organizador;
 import br.com.mack.persistence.entities.Palestra;
 import br.com.mack.email.EmailDispatcherPalestra;
 import br.com.mack.persistence.entities.Organizador;
@@ -20,7 +20,7 @@ public class AlterarPalestraController extends AbstractController {
 
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
-        int id_organizador = (Organizador) getRequest().getSession().getAttribute("participante");
+        Organizador id_organizador = (Organizador) getRequest().getSession().getAttribute("participante");
         //Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
         //long id_participante = participante.getId_pessoa();
         
