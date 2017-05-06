@@ -76,7 +76,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, id);
+            ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Palestra palestra = new Palestra();
