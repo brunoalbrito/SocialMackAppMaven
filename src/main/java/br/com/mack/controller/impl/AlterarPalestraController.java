@@ -18,7 +18,7 @@ public class AlterarPalestraController extends AbstractController {
     @Override
     public void execute() {
         
-        Long id = Long.parseLong(this.getRequest().getSession().getAttribute("idPalestra"));
+        Long id = Long.parseLong(this.getRequest().getQuerySting());
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         Organizador organizador = (Organizador) getRequest().getSession().getAttribute("organizador");
