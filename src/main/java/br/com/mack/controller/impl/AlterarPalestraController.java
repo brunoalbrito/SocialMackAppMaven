@@ -34,9 +34,9 @@ public class AlterarPalestraController extends AbstractController {
         
         Palestra p = new Palestra();
         //p.setId_palestra(id);
-        p.setTema(tema);
-        p.setCodigo(codigo);
-        p.setId_organizador(id_organizador);
+        //p.setTema(tema);
+        //p.setCodigo(codigo);
+        //p.setId_organizador(id_organizador);
                 
         try {
             palestraDAO.update(p);
