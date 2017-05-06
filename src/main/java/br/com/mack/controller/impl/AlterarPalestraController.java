@@ -18,11 +18,11 @@ public class AlterarPalestraController extends AbstractController {
     @Override
     public void execute() {
         
-        String[] urlQuery = (this.getRequest().getQueryString()).split("=");
-        System.out.println(urlQuery);
-        String p_id = urlQuery[1].trim();
-        System.out.println(p_id);
-        //long id = Long.parseLong(p_id);
+        //String[] urlQuery = (this.getRequest().getQueryString()).split("=");
+       // System.out.println(urlQuery);
+        //String p_id = urlQuery[1].trim();
+        //System.out.println(p_id);
+        long id = Long.parseLong(this.getRequest().getParameter("idPalestra"));
         String tema = getRequest().getParameter("tema");
         System.out.println(tema);
         //int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
