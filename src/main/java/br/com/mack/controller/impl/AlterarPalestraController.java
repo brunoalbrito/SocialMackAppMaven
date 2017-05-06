@@ -22,21 +22,21 @@ public class AlterarPalestraController extends AbstractController {
        // System.out.println(urlQuery);
         //String p_id = urlQuery[1].trim();
         //System.out.println(p_id);
-        long id = (Long) this.getRequest().getParameter("idPalestra");
+        long id = Long.parseLong(getRequest().getParameter("idPalestra"));
         String tema = getRequest().getParameter("tema");
         System.out.println(tema);
-        //int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
+        int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         System.out.println(getRequest().getParameter("codigo"));
         Organizador organizador = (Organizador) getRequest().getSession().getAttribute("organizador");
         long id_organizador = organizador.getId_pessoa();
-        //Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
-        //long id_participante = participante.getId_pessoa();
+        Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
+        long id_participante = participante.getId_pessoa();
         
         Palestra p = new Palestra();
-        //p.setId_palestra(id);
-        //p.setTema(tema);
-        //p.setCodigo(codigo);
-        //p.setId_organizador(id_organizador);
+        p.setId_palestra(id);
+        p.setTema(tema);
+        p.setCodigo(codigo);
+        p.setId_organizador(id_organizador);
                 
         try {
             palestraDAO.update(p);
