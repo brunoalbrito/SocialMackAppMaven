@@ -18,17 +18,13 @@ public class AlterarPalestraController extends AbstractController {
     @Override
     public void execute() {
         
-        //String[] urlQuery = (this.getRequest().getQueryString()).split("=");
-       // System.out.println(urlQuery);
-        //String p_id = urlQuery[1].trim();
-        //System.out.println(p_id);
+        
         long id = Long.parseLong(getRequest().getParameter("id_palestra"));
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         Organizador organizador = (Organizador) getRequest().getSession().getAttribute("organizador");
         long id_organizador = organizador.getId_pessoa();
-        //Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
-        //long id_participante = participante.getId_pessoa();
+        
         
         Palestra p = new Palestra();
         p.setId_palestra(id);
