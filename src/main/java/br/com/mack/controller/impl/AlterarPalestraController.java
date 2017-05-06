@@ -17,7 +17,8 @@ public class AlterarPalestraController extends AbstractController {
     PalestraDAO palestraDAO = new PalestraDAO();
     @Override
     public void execute() {
-
+        
+        Long id = parseLong(this.getRequest().getSession().getAttribute("idPalestra"));
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         Organizador organizador = (Organizador) getRequest().getSession().getAttribute("organizador");
@@ -26,6 +27,7 @@ public class AlterarPalestraController extends AbstractController {
         //long id_participante = participante.getId_pessoa();
         
         Palestra p = new Palestra();
+        p.serId_palestra(id);
         p.setTema(tema);
         p.setCodigo(codigo);
         p.setId_organizador(id_organizador);
