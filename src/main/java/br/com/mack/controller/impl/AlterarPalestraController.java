@@ -19,7 +19,7 @@ public class AlterarPalestraController extends AbstractController {
     public void execute() {
         
         String[] urlQuery = this.getRequest().getQueryString().split("=");
-        Long id = Long.parseLong(urlQuery[1]);
+        long id = Long.parseLong(urlQuery[1]);
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         Organizador organizador = (Organizador) getRequest().getSession().getAttribute("organizador");
