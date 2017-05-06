@@ -7,11 +7,7 @@
         <title>Editar Palestra</title>
     </head>
     <body>
-        <form action="${pageContext.request.contextPath}/FrontController" method="POST" enctype="multipart/form-data">
-            <p>
-                <label for="id">id:</label><br>
-                <input type="text" id="id" name="id" value="${p.id_palestra}" readonly/>
-            </p>
+        <form action="${pageContext.request.contextPath}/FrontController?ctrl=AlterarPalestra" method="POST" enctype="multipart/form-data">
             <p>
                 <label for="tema">Tema</label><br>
                 <input type="text" id="tema" name="tema" value="${p.tema}"/>
