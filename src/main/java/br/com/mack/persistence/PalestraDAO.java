@@ -100,13 +100,12 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     @Override
     public void update(Palestra p) {
-        String sql = "UPDATE palestra SET tema=?, codigo=? WHERE id_palestra = ?";
+        String sql = "UPDATE palestra SET tema=?, codigo=?, id_organizador=? WHERE id_palestra = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, p.getTema());
-            //precisa validar se o attributo no banco é tipo String ou nao e caso nao for, fazer o cast apropriado
-            ps.setLong(2, p.getCodigo());
-            ps.setLong(3, p.getId_palestra());            
+            ps.setInt(2, p.getCodigo());
+            ps.setLong(3, p.getId_organizador());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -116,7 +115,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     @Override
     public void delete(Palestra p) {
-        // nao foi necessario usar esse metodo o metodo abaixo deletePalestraById ja é o suficiente
+        // nao foi necessario usar esse metodo o metodo abaixo deletePalestraById ja Ã© o suficiente
     }
     
     public void deletePalestraById(long id){
