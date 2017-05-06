@@ -69,7 +69,30 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     @Override
     public Palestra readById(long id) {
-        return null;
+         Palestra palestras = new Palestra();
+
+        //Declarar String de busca
+        String sql = "SELECT * FROM palestra WHERE id = ? ";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, id)
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Palestra palestra = new Palestra();
+                palestra.setId_palestra(id);
+                palestra.setTema(rs.getString("tema"));
+                palestra.setCodigo(rs.getInt("codigo"));
+                palestra.setId_organizador(rs.getLong("id_organizador"));
+                palestras.add(palestra);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return palestras;
     }
 
     public List<Palestra> readByIdParticipante(long id) {
