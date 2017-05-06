@@ -27,7 +27,7 @@ public class AlterarPalestraController extends AbstractController {
         //long id_participante = participante.getId_pessoa();
         
         Palestra p = new Palestra();
-        p.serId_palestra(id);
+        p.setId_palestra(id);
         p.setTema(tema);
         p.setCodigo(codigo);
         p.setId_organizador(id_organizador);
