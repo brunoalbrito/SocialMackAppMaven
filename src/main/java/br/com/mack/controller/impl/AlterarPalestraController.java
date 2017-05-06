@@ -22,7 +22,7 @@ public class AlterarPalestraController extends AbstractController {
        // System.out.println(urlQuery);
         //String p_id = urlQuery[1].trim();
         //System.out.println(p_id);
-        long id = (Long) this.getRequest().getParameter("idPalestra"));
+        long id = (Long) this.getRequest().getParameter("idPalestra");
         String tema = getRequest().getParameter("tema");
         System.out.println(tema);
         //int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
