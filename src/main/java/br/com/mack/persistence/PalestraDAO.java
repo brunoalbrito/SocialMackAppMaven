@@ -84,7 +84,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
                 palestra.setTema(rs.getString("tema"));
                 palestra.setCodigo(rs.getInt("codigo"));
                 palestra.setId_organizador(rs.getLong("id_organizador"));
-                palestras.add(palestra);
+                palestra.add(palestra);
             }
             ps.close();
 
