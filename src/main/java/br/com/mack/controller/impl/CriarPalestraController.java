@@ -17,6 +17,7 @@ public class CriarPalestraController extends AbstractController {
     PalestraDAO palestraDAO = new PalestraDAO();
     @Override
     public void execute() {
+        List<Palestra> palestras = null;
 
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
@@ -31,10 +32,12 @@ public class CriarPalestraController extends AbstractController {
                 
         try {
             palestraDAO.create(p);
+            palestras = palestraDAO.readAll();
             //palestraDAO.deletePalestraById(id_palestra);
             setReturnPage("/organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        getRequest().getSession().setAttribute("palestras", palestras);
     }
 }
