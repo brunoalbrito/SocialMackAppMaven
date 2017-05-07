@@ -120,7 +120,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     }
     
     public void deletePalestraById(long id){
-        String sql = "DELETE * FROM palestra WHERE id = ?";
+        String sql = "DELETE FROM palestra WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, id);
