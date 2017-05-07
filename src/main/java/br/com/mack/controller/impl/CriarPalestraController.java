@@ -21,13 +21,13 @@ public class CriarPalestraController extends AbstractController {
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
         //int id_organizador = (Organizador) getRequest().getSession().getAttribute("participante");
-        Participante participante = (Participante) getRequest().getSession().getAttribute("participante");
-        long id_participante = participante.getId_pessoa();
+        Organizador org = (Organizador) getRequest().getSession().getAttribute("organizador");
+        long id_org = org.getId_pessoa();
         
         Palestra p = new Palestra();
         p.setTema(tema);
         p.setCodigo(codigo);
-        p.setId_organizador(id_participante);
+        p.setId_organizador(id_paid_orgrticipante);
                 
         try {
             palestraDAO.create(p);
