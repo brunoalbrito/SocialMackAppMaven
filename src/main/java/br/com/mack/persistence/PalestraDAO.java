@@ -100,8 +100,8 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     @Override
     public void update(Palestra p) {
-        String sql = "UPDATE palestra SET tema = ?, codigo = ?, id_organizador = ? WHERE id = ?";
-        try {
+         try {
+            String sql = "update palestra set tema = ?, codigo = ?, id_organizador = ? where id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, p.getTema());
             ps.setInt(2, p.getCodigo());
@@ -110,8 +110,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             ps.execute();
             ps.close();
         } catch (SQLException ex) {
-            System.out.println("SQLExeception teste");
-            //Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
