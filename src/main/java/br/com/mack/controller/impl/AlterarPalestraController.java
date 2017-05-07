@@ -32,8 +32,8 @@ public class AlterarPalestraController extends AbstractController {
         p.setId_organizador(id_org);
                 
         try {
-            palestraDAO.update(p);
-            palestras = palestraDAO.readAll();
+            PalestraDAO.update(p);
+            //palestras = palestraDAO.readAll();
             //palestraDAO.deletePalestraById(id_palestra);
             setReturnPage("organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
