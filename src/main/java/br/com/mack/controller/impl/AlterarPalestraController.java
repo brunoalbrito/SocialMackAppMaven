@@ -38,8 +38,7 @@ public class AlterarPalestraController extends AbstractController {
             //palestraDAO.deletePalestraById(id_palestra);
             setReturnPage("organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
-            System.out.println("Controller exception teste");
-            //Logger.getLogger(AlterarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AlterarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
         //getRequest().getSession().setAttribute("palestras", palestras);
     }
