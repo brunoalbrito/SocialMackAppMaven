@@ -19,9 +19,9 @@
                 <div class="panel-body">
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController">
                         <!--/FrontController?ctrl=AlterarPalestra-->
-                        <input type="text" value="tema" title="Digite o tema." name="tema" placeholder="${param.tema}" required="required" class="form-control input-lg">
+                        <input type="text" value="${param.tema}" title="Digite o tema." name="tema" placeholder="${param.tema}" required="required" class="form-control input-lg">
                         <br/>
-                        <input type="number" value="codigo" title="Digite o código." name="codigo" placeholder="${param.codigo}" required="required" class="form-control input-lg">
+                        <input type="number" value="${param.codigo}" title="Digite o código." name="codigo" placeholder="${param.codigo}" required="required" class="form-control input-lg">
                         <br/>
                         
                         <input type="hidden" name="id_palestra" value="${param.idPalestra}"/>
