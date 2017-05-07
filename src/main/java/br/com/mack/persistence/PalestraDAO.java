@@ -120,22 +120,26 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     }
 
     public void deletePalestraById(long id_palestra) {
-        //String sql1 = "DELETE FROM palestra WHERE id = ?";
-        String sql2 = "DELETE FROM palestra p "
-                + "INNER JOIN organizador o on p.id_organizador = o.id_pessoa"
-                + "WHERE p.id = ? ";
-        String sql3 = "DELETE FROM palestra WHERE id = ?";
+        String sql1 = "DELETE FROM palestra WHERE id = ?";
+//        String sql2 = "DELETE FROM palestra p "
+//                + "INNER JOIN organizador o on p.id_organizador = o.id_pessoa"
+//                + "WHERE p.id = ? ";
+//        String sql3 = "DELETE FROM palestra WHERE id = ?";
         
         try {
-            PreparedStatement ps2 = connection.prepareStatement(sql2);
-            ps2.setLong(1, id_palestra);
-            ps2.execute();
-            ps2.close();
-            
-            PreparedStatement ps3 = connection.prepareStatement(sql3);
-            ps3.setLong(1, id_palestra);
-            ps3.execute();
-            ps3.close();
+            PreparedStatement ps1 = connection.prepareStatement(sql1);
+            ps1.setLong(1, id_palestra);
+            ps1.execute();
+            ps1.close();
+//            PreparedStatement ps2 = connection.prepareStatement(sql2);
+//            ps2.setLong(1, id_palestra);
+//            ps2.execute();
+//            ps2.close();
+//            
+//            PreparedStatement ps3 = connection.prepareStatement(sql3);
+//            ps3.setLong(1, id_palestra);
+//            ps3.execute();
+//            ps3.close();
         } catch (SQLException ex) {
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
