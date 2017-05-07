@@ -110,6 +110,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             ps.execute();
             ps.close();
         } catch (SQLException ex) {
+            System.out.println("SQLExeception teste");
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
