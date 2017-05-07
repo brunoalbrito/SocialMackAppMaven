@@ -1,28 +1,33 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Editar Palestra</title>
-    </head>
-    <body>
-        <form action="${pageContext.request.contextPath}/FrontController?ctrl=AlterarPalestra" method="POST" enctype="multipart/form-data">
-            <p>
-                <label for="tema">Tema</label><br>
-                <input type="text" id="tema" name="tema" value="${p.tema}"/>
-            </p>
 
-            <p>
-                <label for="codigo">Codigo:</label><br>
-                <input type="codigo" id="codigo" name="codigo" value="${p.codigo}"/>
-            </p>
+<c:import url="/template/header_post_login_organizador.jsp"/>
 
-            <input type="hidden" name="ctrl" value="AlterarPalestra"/>
-            <input type="hidden" name="id_palestra" value="${p.id_palestra}"/>
-            <p>
-                <input type="submit" value="Alterar"/>
-            </p>
-        </form>
-    </body>
-</html>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    EDITAR PALESTRA
+                </div>
+                    
+                <% String idPalestra = request.getParameter("idPalestra"); %>
+
+                <div class="panel-body">
+                    <form method="POST" action="${pageContext.request.contextPath}/FrontController">
+                        <!--/FrontController?ctrl=AlterarPalestra-->
+                        <input type="text" title="Digite o tema." name="tema" placeholder="Tema" required="required" class="form-control input-lg">
+                        <br/>
+                        <input type="number" title="Digite o código." name="codigo" placeholder="Código" required="required" class="form-control input-lg">
+                        <br/>
+                        <input type="hidden" value="AlterarPalestra" name="ctrl">
+                        
+                        <input type="hidden" name="id_palestra" value="${param.idPalestra}"/>
+                        
+                        <input type="submit" value="Alterar" class="btn btn-default btn-lg center-block">
+                    </form>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+<c:import url="../template/footer_post_login.jsp"/>
