@@ -99,7 +99,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     }
 
     @Override
-    public static void update(Palestra p) {
+    public void update(Palestra p) {
         String sql = "UPDATE palestra SET tema = ?, codigo = ?, id_organizador = ? WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
