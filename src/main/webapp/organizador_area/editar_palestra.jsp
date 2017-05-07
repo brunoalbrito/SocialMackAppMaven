@@ -23,6 +23,8 @@
                         <br/>
                         <input type="number" value="${param.codigo}" title="Digite o código." name="codigo" placeholder="${param.codigo}" required="required" class="form-control input-lg">
                         <br/>
+                        <input type="number" value="${param.idPalestra}" title="ID da palestra" name="id_palestra" placeholder="${param.idPalestra}" required="required" class="form-control input-lg">
+                        <br/>
                         
                         <input type="hidden" name="id_palestra" value="${param.idPalestra}"/>
                         
