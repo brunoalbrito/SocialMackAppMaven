@@ -27,7 +27,9 @@
                         
                         <input type="hidden" name="id_palestra" value="${param.idPalestra}"/>
                         
-                        <input type="submit" value="Alterar" class="btn btn-default btn-lg center-block">
+                        <a href="<c:url value="/FrontController?ctrl=ALterarPalestra&idPalestra=${param.idPalestra}"/>" class="btn btn-default btn-lg center-block">
+                            Alterar
+                        </a>
                     </form>   
                 </div>
             </div>
