@@ -23,13 +23,13 @@
                         <br/>
                         <input type="number" value="${param.codigo}" title="Digite o código." name="codigo" placeholder="${param.codigo}" required="required" class="form-control input-lg">
                         <br/>
-                        <input type="hidden" value="AlterarPalestra" name="ctrl">
                         
                         <input type="hidden" name="id_palestra" value="${param.idPalestra}"/>
                         
-                        <a href="<c:url value="/FrontController?ctrl=ALterarPalestra&idPalestra=${param}"/>" class="btn btn-default btn-lg center-block">
-                            Alterar
-                        </a>
+                        <input type="hidden" value="AlterarPalestra" name="ctrl">
+                        
+                        <inout type="submit" value="Alterar" class="btn btn-default btn-lg center-block">
+                         
                     </form>   
                 </div>
             </div>
