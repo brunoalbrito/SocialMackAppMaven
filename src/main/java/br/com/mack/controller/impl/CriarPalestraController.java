@@ -27,7 +27,7 @@ public class CriarPalestraController extends AbstractController {
         Palestra p = new Palestra();
         p.setTema(tema);
         p.setCodigo(codigo);
-        p.setId_organizador(id_paid_orgrticipante);
+        p.setId_organizador(id_org);
                 
         try {
             palestraDAO.create(p);
