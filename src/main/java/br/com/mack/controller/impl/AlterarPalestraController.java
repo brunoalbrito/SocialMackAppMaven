@@ -34,12 +34,12 @@ public class AlterarPalestraController extends AbstractController {
                 
         try {
             palestraDAO.update(p);
-            //palestras = palestraDAO.readAll();
+            palestras = palestraDAO.readAll();
             //palestraDAO.deletePalestraById(id_palestra);
             setReturnPage("organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
             Logger.getLogger(AlterarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //getRequest().getSession().setAttribute("palestras", palestras);
+        getRequest().getSession().setAttribute("palestras", palestras);
     }
 }
