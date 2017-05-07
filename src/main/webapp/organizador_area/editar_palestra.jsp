@@ -28,7 +28,7 @@
                         
                         <input type="hidden" value="AlterarPalestra" name="ctrl">
                         
-                        <inout type="submit" value="Alterar" class="btn btn-default btn-lg center-block">
+                        <input type="submit" value="Alterar" class="btn btn-default btn-lg center-block">
                          
                     </form>   
                 </div>
