@@ -18,7 +18,7 @@ public class AlterarPalestraController extends AbstractController {
     
     @Override
     public void execute() {
-        //List<Palestra> palestras = null;
+        List<Palestra> palestras = null;
         
         long id = Long.parseLong(getRequest().getParameter("id_palestra"));
         String tema = getRequest().getParameter("tema");
