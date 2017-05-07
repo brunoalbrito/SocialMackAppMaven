@@ -16,7 +16,7 @@
                     </a>               
                 </div> 
                 <div class="panel-footer">
-                    <a href="<c:url value="editar_palestra.jsp?idPalestra=${p.id_palestra}"/>" class="btn btn-default btn-lg center-block"> 
+                    <a href="<c:url value="editar_palestra.jsp?idPalestra=${p.id_palestra}&tema=${p.tema}&codigo=${p.codigo}"/>" class="btn btn-default btn-lg center-block"> 
                         Alterar Palestra 
                     </a>               
                 </div> 

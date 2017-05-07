@@ -10,14 +10,18 @@
                     EDITAR PALESTRA
                 </div>
                     
-                <% String idPalestra = request.getParameter("idPalestra"); %>
+                <%
+                    String idPalestra = request.getParameter("idPalestra"); 
+                    String tema = request.getParameter("tema"); 
+                    String codigo = request.getParameter("codigo"); 
+                %>
 
                 <div class="panel-body">
                     <form method="POST" action="${pageContext.request.contextPath}/FrontController">
                         <!--/FrontController?ctrl=AlterarPalestra-->
-                        <input type="text" title="Digite o tema." name="tema" placeholder="Tema" required="required" class="form-control input-lg">
+                        <input type="text" title="Digite o tema." name="tema" placeholder="${param.tema}" required="required" class="form-control input-lg">
                         <br/>
-                        <input type="number" title="Digite o código." name="codigo" placeholder="Código" required="required" class="form-control input-lg">
+                        <input type="number" title="Digite o código." name="codigo" placeholder="${param.codigo}" required="required" class="form-control input-lg">
                         <br/>
                         <input type="hidden" value="AlterarPalestra" name="ctrl">
                         
