@@ -32,7 +32,7 @@ public class CriarPalestraController extends AbstractController {
         try {
             palestraDAO.create(p);
             //palestraDAO.deletePalestraById(id_palestra);
-            setReturnPage("organizador_area/listar_usuarios.jsp");
+            setReturnPage("/organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
