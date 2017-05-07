@@ -101,7 +101,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
     @Override
     public void update(Palestra p) {
          try {
-            String sql = "update palestra set tema = ?, codigo = ?, id_organizador = ? where id_palestra = ?";
+            String sql = "update palestra set tema = ?, codigo = ?, id_organizador = ? where id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, p.getTema());
             ps.setInt(2, p.getCodigo());
