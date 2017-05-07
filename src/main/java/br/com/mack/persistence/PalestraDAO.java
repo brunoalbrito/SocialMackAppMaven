@@ -106,7 +106,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
             ps.setString(1, p.getTema());
             ps.setInt(2, p.getCodigo());
             ps.setLong(3, p.getId_organizador());
-            ps.setLong(3, p.getId_palestra());
+            ps.setLong(4, p.getId_palestra());
             ps.execute();
             ps.close();
         } catch (SQLException ex) {
