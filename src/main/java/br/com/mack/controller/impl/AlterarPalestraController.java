@@ -17,26 +17,28 @@ public class AlterarPalestraController extends AbstractController {
     PalestraDAO palestraDAO = new PalestraDAO();
     @Override
     public void execute() {
-        
+        List<Palestra> palestras = null;
         
         long id = Long.parseLong(getRequest().getParameter("id_palestra"));
         String tema = getRequest().getParameter("tema");
         int codigo = Integer.parseInt(getRequest().getParameter("codigo"));
-        Organizador organizador = (Organizador) getRequest().getSession().getAttribute("organizador");
-        long id_organizador = organizador.getId_pessoa();
+        Organizador org = (Organizador) getRequest().getSession().getAttribute("organizador");
+        long id_org = org.getId_pessoa();
         
         Palestra p = new Palestra();
         p.setId_palestra(id);
         p.setTema(tema);
         p.setCodigo(codigo);
-        p.setId_organizador(id_organizador);
+        p.setId_organizador(id_org);
                 
         try {
             palestraDAO.update(p);
+            palestras = palestraDAO.readAll();
             //palestraDAO.deletePalestraById(id_palestra);
+            setReturnPage("organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
             Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        setReturnPage("organizador_area/lista_palestras.jsp");
+        getRequest().getSession().setAttribute("palestras", palestras);
     }
 }

@@ -121,7 +121,6 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
     public void deletePalestraById(long id_palestra) {
         String sql1 = "DELETE FROM palestra WHERE id = ?";
-        
         try {
             PreparedStatement ps1 = connection.prepareStatement(sql1);
             ps1.setLong(1, id_palestra);
