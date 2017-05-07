@@ -39,7 +39,7 @@ public class AlterarPalestraController extends AbstractController {
             setReturnPage("organizador_area/lista_palestras.jsp");
         } catch (Exception ex) {
             System.out.println("Controller exception teste");
-            Logger.getLogger(RegistrarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AlterarPalestraController.class.getName()).log(Level.SEVERE, null, ex);
         }
         //getRequest().getSession().setAttribute("palestras", palestras);
     }
