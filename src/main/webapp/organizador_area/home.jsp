@@ -2,11 +2,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <c:import url="/template/header_post_login_organizador.jsp"/>
-${participante}
 <div class="row">
 
     <c:out value="${organizador}"></c:out>
-
+    <br/>
     Página inicial do organizador
 
 </div>

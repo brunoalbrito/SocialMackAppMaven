@@ -55,10 +55,33 @@ public class InteresseDAO implements GenericDAO<Interesse> {
         return interesses;
     }
 
-    @Override
-    public Interesse readById(long id) {
-        return null;
+    public List<Interesse> readByIdPalestra(long id_palestra) {
+        List<Interesse> interesses = new ArrayList<Interesse>();
+        
+        String sql = "SELECT * FROM interesse INNER JOIN palestra_interesse ON interesse.id = palestra_interesse.id_interesse WHERE id_palestra = ?";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id_palestra);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Interesse interessesInscricao = new Interesse();
+                interessesInscricao.setId(rs.getLong("id"));
+                interessesInscricao.setDescricao(rs.getString("descricao"));
+                interesses.add(interessesInscricao);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return interesses;
     }
+
+        @Override
+        public Interesse readById(long id){
+            return null;
+        }
 
     @Override
     public void update(Interesse interesse) {
@@ -101,7 +124,7 @@ public class InteresseDAO implements GenericDAO<Interesse> {
     }
     
     public void registrarInteresseByInscricao(long idInteresse, long idInscricao){
-        String sql = "INSERT INTO inscricao_interesse(id_Inscricao, id_Interesse) VALUES(?,?)";
+        String sql = "INSERT INTO inscricao_interesse VALUES(?,?)";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setLong(1, idInscricao);

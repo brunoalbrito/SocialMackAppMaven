@@ -163,16 +163,28 @@ public class PalestraDAO implements GenericDAO<Palestra> {
 
         String sql = "INSERT INTO inscricao(id_participante,id_palestra)VALUES(?,?)";
 
+
         try {
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setLong(1, id_participante);
-            ps.setLong(2, id_palestra);
+            PreparedStatement ps = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            
+            ps.setLong(1, idPalestra);
+            ps.setLong(2, idParticipante);
+            
             ps.execute();
+            ResultSet keys = ps.getGeneratedKeys();
+            keys.next();
+            id = keys.getInt(1);
+            
+            ps.close();
+            
+            return id;
         } catch (SQLException ex) {
+            System.out.println("Deu ruim ao tentar pegar a key gerada!");
             Logger.getLogger(PalestraDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
         }
     }
-
+  
     public void cancelRegisterInPalestra(long id_participante, long id_palestra) {
 
         String sql = "DELETE FROM inscricao WHERE id_participante=? AND id_palestra=?";
