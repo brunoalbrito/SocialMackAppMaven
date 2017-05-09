@@ -28,7 +28,7 @@
                                 <div class="com-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" aria-label="..." name="interesse" value="${i.id}">
+                                            <input type="checkbox" aria-label="..." name="interesse" value="${i.id}" checked="ckecked">
                                         </span>
                                         <input type="text" class="form-control" aria-label="..." readonly="readonly" disabled="disabled" value="${i.descricao}" title="Interesse">
                                     </div><!-- /input-group -->
