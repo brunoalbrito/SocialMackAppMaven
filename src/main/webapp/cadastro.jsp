@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:import url="<c:url value="template/header_pre_login.jsp"/>"/>
+<c:import url="template/header_pre_login.jsp"/>
 
 <div class="bg-faded p-4 my-4">
     <hr class="divider">
