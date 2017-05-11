@@ -11,7 +11,7 @@
 	<div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 center">
 		<div class="panel panel-default ">
 			<div class="panel-heading">
-				<center>LOGIN</center>
+				<h2 class="text-center text-lg text-uppercase my-0"><strong>LOGIN</strong></h2>
 			</div>
 			<br>
 			<div class="panel-body">
