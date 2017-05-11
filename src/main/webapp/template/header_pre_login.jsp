@@ -60,10 +60,10 @@
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link active text-uppercase text-expanded" href="<c:url value="/index.jsp">">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link active text-uppercase text-expanded" href="<c:url value="/index.jsp"/>">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="<c:url value="/cadastro.jsp">">Cadastro</a>
+                        <a class="nav-link text-uppercase text-expanded" href="<c:url value="/cadastro.jsp"/>">Cadastro</a>
                     </li>
                 </ul>
             </div>
