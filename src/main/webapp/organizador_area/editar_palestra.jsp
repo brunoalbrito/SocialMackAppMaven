@@ -1,7 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<c:import url="/template/header_post_login_organizador.jsp"/>
+<c:import url="/template/header_pos_login_organizador.jsp"/>
 
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
@@ -36,4 +36,4 @@
         </div>
     </div>
 
-<c:import url="../template/footer_post_login.jsp"/>
+<c:import url="../template/footer.jsp"/>
