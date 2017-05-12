@@ -5,8 +5,8 @@
 <div class="row">
 
     <c:forEach var="i" items="${participantes}">
-                <p>Participante => <c:out value="${i.nome}"></c:out><p>
-        </c:forEach>
+        <p>Participante => <c:out value="${i.nome}"></c:out><p>
+    </c:forEach>
 
 </div>
 
