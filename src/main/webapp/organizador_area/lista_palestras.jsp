@@ -17,7 +17,7 @@
                 Participantes
             </a>
             <a href="palestra_interesses.jsp" class="btn btn-primary center-block">Interesses</a>   
-            <a href="<c:url value="/FrontController?ctrl=AlterarPalestra&id_palestra=${p.id_palestra}"/>" class="btn btn-primary center-block">Editar</a> 
+            <a href="<c:url value="/FrontController?ctrl=AlterarPalestra&id_palestra=${p.id_palestra}&codigo=${p.codigo}&tema=${p.tema}"/>" class="btn btn-primary center-block">Editar</a> 
         </fieldset> 
     </div>
     <center>
