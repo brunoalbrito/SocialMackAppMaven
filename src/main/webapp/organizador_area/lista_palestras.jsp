@@ -9,7 +9,7 @@
  <center>
      <div class="col-md-4">
          <fieldset style="border: solid 1px; border-radius: 5px; padding: 1em;" >
-             <legend>Palestra 23</legend>
+             <legend>${p.codigo}</legend>
              <hr>
              <p>${p.tema}</p>
              <hr>
