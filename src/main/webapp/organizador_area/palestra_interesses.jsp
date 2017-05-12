@@ -39,15 +39,14 @@
             <form method="POST" action="${pageContext.request.contextPath}/FrontController">
 
                 <c:forEach items="${interesses}" var="i">
-
-                <div class="col-md-12 input-group" style="margin-bottom: 1em;">
-                    <span class="input-group-addon">
+                    <div class="col-md-12 input-group" style="margin-bottom: 1em;">
+                         <span class="input-group-addon">
                         <input type="checkbox" aria-label="..." name="interesse" value="${i.id}">
-                    </span>
-                    <input type="text" class="form-control" readonly="readonly" disabled="disabled" value="Interesse" title="Interesse">
-                </div><!-- /input-group -->
-                <!-- /.col-lg-6 -->                      
-            </c:forEach>      
+                         </span>
+                         <input type="text" class="form-control" readonly="readonly" disabled="disabled" value="${i.descricao}" title="Interesse">
+                        </div><!-- /input-group -->
+                    <!-- /.col-lg-6 -->                      
+                </c:forEach>      
 
             <center>
                 <div class="col-md-6">
