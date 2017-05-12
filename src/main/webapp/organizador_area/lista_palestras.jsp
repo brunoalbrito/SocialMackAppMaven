@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:import url="/template/header_post_login_organizador.jsp"/> 
+<c:import url="/template/header_pos_login_organizador.jsp"/> 
 
 <div class="row"> 
     <c:forEach items="${palestras}" var="p">     
@@ -44,4 +44,4 @@
 
 </div> 
 
-<c:import url="../template/footer_post_login.jsp"/> 
+<c:import url="../template/footer.jsp"/> 
