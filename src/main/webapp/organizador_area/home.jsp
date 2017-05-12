@@ -13,7 +13,7 @@
 
         <a href="cadastro_palestra.jsp" class="btn btn-warning">Criar palestra</a>
 
-        <a href="lista_palestras.jsp" class="btn btn-warning">Listar palestras</a>
+        <a href="${pageContext.request.contextPath}/FrontController?ctrl=ListarPalestraOrganizador" class="btn btn-warning">Listar palestras</a>
 
     </center>
 
