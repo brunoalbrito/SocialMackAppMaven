@@ -44,7 +44,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Match <span class="caret"></span></a>
 
                             <ul class="dropdown-menu">
-                                <li><a href="#">Buscar</a></li>
+                                <li><a href="${pageContext.request.contextPath}/FrontController?ctrl=PesquisarMatch">Buscar</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Histórico</a></li>
                             </ul>

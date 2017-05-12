@@ -4,6 +4,7 @@ import br.com.mack.persistence.entities.Participante;
 import br.com.mack.singletonconnection.SingletonConnection;
 import java.io.ByteArrayInputStream;
 import java.util.List;
+import java.util.ArrayList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -110,5 +111,42 @@ public class ParticipanteDAO implements GenericDAO<Participante> {
     @Override
     public void delete(Participante participante) {
 
+    }
+    
+    public List<Participante> searchMeatch(long id) {
+        String sql = "SELECT pessoa.id, nome,email,celular,curso,COUNT(pessoa.id) qtd\n"
+                + "	FROM inscricao \n"
+                + "		INNER JOIN pessoa \n"
+                + "		ON \n"
+                + "pessoa.id = inscricao.id_participante \n"
+                + "	INNER JOIN participante\n"
+                + "		ON\n"
+                + "	participante.id_pessoa = pessoa.id\n"
+                + "	WHERE id_palestra \n"
+                + "	IN (SELECT id_palestra FROM inscricao WHERE id_participante = ?) \n"
+                + "	AND pessoa.id <> ? \n"
+                + "	GROUP BY pessoa.id,nome,curso ORDER BY qtd DESC LIMIT 5;";
+        List<Participante> participantes = new ArrayList();
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            ps.setLong(2, 1);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Participante p = new Participante();
+                p.setId_pessoa(rs.getLong("id"));
+                p.setNome(rs.getString("nome"));
+                p.setEmail(rs.getString("email"));
+                p.setCurso(rs.getString("curso"));
+                p.setCelular(rs.getString("celular"));
+                participantes.add(p);
+            }
+            ps.close();
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ParticipanteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return participantes;
     }
 }
