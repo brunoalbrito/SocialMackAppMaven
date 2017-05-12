@@ -4,6 +4,7 @@ import br.com.mack.persistence.entities.Participante;
 import br.com.mack.singletonconnection.SingletonConnection;
 import java.io.ByteArrayInputStream;
 import java.util.List;
+import java.util.ArrayList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
