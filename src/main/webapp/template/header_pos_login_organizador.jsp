@@ -41,7 +41,7 @@
 
 <body>
 
-    <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down"><a href="home.html" style="text-decoration: none; color: #fff">SocialMack</a></div>
+    <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down"><a href="home.jsp" style="text-decoration: none; color: #fff">SocialMack</a></div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-4 hidden-md-down"></div>
 
     <!-- Navigation -->
@@ -59,7 +59,7 @@
                     </li>
 
                     <li class="nav-item px-lg-4">
-                        <a class="active nav-link text-uppercase text-expanded" href="cadastro_palestra.html">Nova palestra</a>
+                        <a class="active nav-link text-uppercase text-expanded" href="cadastro_palestra.jsp">Nova palestra</a>
                     </ul>
                 </div>
             </div>
