@@ -11,9 +11,9 @@
         <img src="../img/mackenzie.png">
         <br>
 
-        <a href="cadastro_palestra.html" class="btn btn-warning">Criar palestra</a>
+        <a href="cadastro_palestra.jsp" class="btn btn-warning">Criar palestra</a>
 
-        <a href="lista_palestras.html" class="btn btn-warning">Listar palestras</a>
+        <a href="lista_palestras.jsp" class="btn btn-warning">Listar palestras</a>
 
     </center>
 
