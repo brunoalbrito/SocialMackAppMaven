@@ -15,7 +15,7 @@
                         <br/>
                         <input type="number" title="Digite o código." name="codigo" placeholder="Código" required="required" class="form-control input-lg">
                         <br/>
-                        <input type="hidden" value="CriarPalestra" name="ctrl">
+                        <input type="hidden" value=ValidaRegistro name="ctrl">
                         <input type="submit" value="PRÓXIMO" class="btn btn-default btn-lg center-block">
                     </form>   
                 </div>
