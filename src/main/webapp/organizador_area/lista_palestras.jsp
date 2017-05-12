@@ -9,9 +9,9 @@
  <center>
      <div class="col-md-4">
          <fieldset style="border: solid 1px; border-radius: 5px; padding: 1em;" >
-             <legend>${p.codigo}</legend>
+             <legend>${p.tema}</legend>
              <hr>
-             <p>${p.tema}</p>
+             <p>Código: ${p.codigo}</p>
              <hr>
              <a href="<c:url value="/FrontController?ctrl=ListarUsuariosPalestra&idPalestra=${p.id_palestra}"/>" class="btn btn-primary center-block">
                 Participantes
