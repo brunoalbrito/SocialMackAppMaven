@@ -12,7 +12,6 @@
             <br>
             <div class="panel-body">
                 <form method="POST" action="${pageContext.request.contextPath}/FrontController">
-                
                     <input type="text" title="Digite o tema." name="tema" placeholder="Tema" required="required" class="form-control input-lg">
                     <br/>
                     <input type="number" title="Digite o código." name="codigo" placeholder="Código" required="required" class="form-control input-lg">
