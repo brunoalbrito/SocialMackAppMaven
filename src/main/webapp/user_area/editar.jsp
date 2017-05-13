@@ -4,7 +4,15 @@
 
 <c:import url="/template/header_pos_login_participante.jsp"/>
 
-
+                <%
+                    String id_pessoa = request.getParameter("idPessoa"); 
+                    String nome = request.getParameter("nome"); 
+                    String email = request.getParameter("email"); 
+                    String senha = request.getParameter("senha"); 
+                    String celular = request.getParameter("celular"); 
+                    String formacao = request.getParameter("formacao"); 
+                    String curso = request.getParameter("curso");
+                %>
 <center>
     	
     		<div class="bg-faded p-4 my-4">
@@ -17,20 +25,20 @@
             <c:out value="${participante.senha}"></c:out>
                 <p>
                     <label for="id">ID:</label><br>
-                    <input type="text" class="form-group" disabled id="id" name="id" value="${participante.id_pessoa}" />
+                    <input type="text" class="form-group" disabled id="id" name="id" value="${params.id_pessoa}" />
             </p>
             <p>
                 <label for="name">Nome:</label><br>
-                <input type="text" id="name" name="name" value="${participante.nome}" class=""/>
+                <input type="text" id="name" name="name" value="${params.nome}" class=""/>
             </p>
 
             <p>
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" value="${participante.email}"/>
+                <input type="email" id="email" name="email" value="${params.email}"/>
             </p>
 
             <c:choose>
-                <c:when test="${participante.senha == null}">
+                <c:when test="${params.senha == null}">
                     <p>
                         <label for="senha">Senha:</label><br>
                         <input type="text" id="senha" name="senha"/>
@@ -48,16 +56,16 @@
                 <c:otherwise>
                     <p>
                         <label for="senha">Senha:</label><br>
-                        <input type="text" id="senha" name="senha" value="${participante.senha}"/>
+                        <input type="text" id="senha" name="senha" value="${params.senha}"/>
                     </p>
 
                     <p>
                         <label for="celular">Celular:</label><br>
-                        <input type="text" id="celular" name="celular" value="${participante.celular}"/>
+                        <input type="text" id="celular" name="celular" value="${params.celular}"/>
                     </p>
                     <p>
                         <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao" value="${participante.curso}"/>
+                        <input type="text" id="formacao" name="formacao" value="${params.curso}"/>
                     </p>
                 </c:otherwise>
             </c:choose>
