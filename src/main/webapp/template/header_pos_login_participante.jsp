@@ -63,7 +63,7 @@
                     </li>
 
                     <li class="nav-item px-lg-4">
-                        <a class="active nav-link text-uppercase text-expanded" href="#">Perfil</a>
+                        <a class="nav-link text-uppercase text-expanded" href="${pageContext.request.contextPath}/FrontController?ctrl=AlterarParticipante">Perfil</a>
                     </li>
 
                     <li class="nav-item px-lg-4">

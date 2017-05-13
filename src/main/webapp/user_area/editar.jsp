@@ -4,6 +4,7 @@
 
 <c:import url="/template/header_pos_login_participante.jsp"/>
 
+
 <center>
     	
     		<div class="bg-faded p-4 my-4">
