@@ -15,7 +15,7 @@
 
         <a href="${pageContext.request.contextPath}/FrontController?ctrl=PalestraInscrito" class="btn btn-warning">Agenda</a>
 
-        <a href="" class="btn btn-warning">Perfil</a>
+        <a href="${pageContext.request.contextPath}/FrontController?ctrl=AlterarParticipante" class="btn btn-warning">Perfil</a>
 
     </center>
 
