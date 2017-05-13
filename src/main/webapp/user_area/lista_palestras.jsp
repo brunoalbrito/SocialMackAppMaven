@@ -5,7 +5,7 @@
 
 <div class="bg-faded p-4 my-4">
    <c:forEach var="p" items="${palestras}">
-
+<center>
         <div class="col-sm-12 col-md-4 col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-
+</center>
     </c:forEach>
 </div>
 <c:import url="../template/footer.jsp"/>

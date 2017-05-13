@@ -12,7 +12,7 @@
             <h2 class="text-center text-lg text-uppercase my-0">Editar <strong>Perfil</strong></h2>
             <hr class="divider">
 			
-    			<form action="FrontController" method="POST">
+    			<form action="${pageContext.request.contextPath}/FrontController" method="POST">
             <c:out value="${participante.senha}"></c:out>
                 <p>
                     <label for="id">ID:</label><br>
