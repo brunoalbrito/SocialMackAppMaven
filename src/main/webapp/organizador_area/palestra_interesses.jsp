@@ -50,7 +50,7 @@
 
             <center>
                 <div class="col-md-6">
-                    <input type="hidden" name="ctrl" value="CriarPalestra"/>
+                    <input type="hidden" name="ctrl" value="RegistrarPalestra"/>
                     <input type="submit" class="btn btn-block btn-warning" value="SALVAR">     
                 </div>                   
             </center>
