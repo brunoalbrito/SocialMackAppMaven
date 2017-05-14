@@ -8,6 +8,7 @@
     <center>
         <h2>Olá, <c:out value="${participante.nome}"></c:out></h2>       
         
+        
         <img src="../img/mackenzie.png">
         <br>
 
