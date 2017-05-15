@@ -25,46 +25,47 @@
             <c:out value="${participante.senha}"></c:out>
             <p>
                 <label for="name">Nome:</label><br>
-                <input type="text" id="name" name="name" value="${params.nome}" class=""/>
+                <input type="text" id="name" name="name" placeholder= "${params.nome}" value="${params.nome}" class=""/>
             </p>
 
             <p>
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" value="${params.email}"/>
+                <input type="email" id="email" name="email" disable="true" placeholder= "${params.email}" value="${params.email}"/>
             </p>
 
             <c:choose>
                 <c:when test="${params.senha == null}">
                     <p>
                         <label for="senha">Senha:</label><br>
-                        <input type="text" id="senha" name="senha"/>
+                        <input type="text" id="senha" placeholder= "${params.senha}" name="senha"/>
                     </p>
 
                     <p>
                         <label for="celular">Celular:</label><br>
-                        <input type="text" id="celular" name="celular"/>
+                        <input type="text" id="celular" placeholder= "${params.celular}" name="celular"/>
                     </p>
                     <p>
                         <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao"/>
+                        <input type="text" id="formacao" placeholder= "${params.formacao}" name="formacao"/>
                     </p>
                 </c:when>
                 <c:otherwise>
                     <p>
                         <label for="senha">Senha:</label><br>
-                        <input type="text" id="senha" name="senha" value="${params.senha}"/>
+                        <input type="text" id="senha" name="senha" placeholder= "${params.senha}" value="${params.senha}"/>
                     </p>
 
                     <p>
                         <label for="celular">Celular:</label><br>
-                        <input type="text" id="celular" name="celular" value="${params.celular}"/>
+                        <input type="text" id="celular" name="celular" placeholder= "${params.celular}" value="${params.celular}"/>
                     </p>
                     <p>
                         <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao" value="${params.curso}"/>
+                        <input type="text" id="formacao" name="formacao" placeholder= "${params.formacao}" value="${params.curso}"/>
                     </p>
                 </c:otherwise>
             </c:choose>
+            <input type="hidden" name="idParticipante" value="${params.id_pessoa}"
             <input type="hidden" name="ctrl" value="AlterarParticipante"/>
                     <br>
             <p>
