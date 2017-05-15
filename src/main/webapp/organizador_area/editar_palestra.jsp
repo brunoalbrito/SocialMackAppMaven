@@ -1,14 +1,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<c:import url="/template/header_pos_login_organizador.jsp"/>
+<c:import url="../template/header_pos_login_organizador.jsp"/>
 
-    <div class="row">
+    <div class="bg-faded p-4 my-4">
+        <center>
         <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    EDITAR PALESTRA
+                    <h2>EDITAR PALESTRA</h2>
                 </div>
+                <br>
                     
                 <%
                     String idPalestra = request.getParameter("idPalestra"); 
@@ -28,12 +30,13 @@
                         
                         <input type="hidden" value="AlterarPalestra" name="ctrl">
                         
-                        <input type="submit" value="Alterar" class="btn btn-default btn-lg center-block">
+                        <input type="submit" value="Alterar" class="btn btn-default btn-lg center-block btn-warning">
                          
                     </form>   
                 </div>
             </div>
         </div>
+        </center>
     </div>
 
 <c:import url="../template/footer.jsp"/>

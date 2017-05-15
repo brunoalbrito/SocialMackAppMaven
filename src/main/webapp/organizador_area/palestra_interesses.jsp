@@ -41,7 +41,7 @@
                 <c:forEach items="${interesses}" var="i">
                     <div class="col-md-12 input-group" style="margin-bottom: 1em;">
                          <span class="input-group-addon">
-                        <input type="checkbox" aria-label="..." name="interesse" value="${i.id}">
+                        <input type="checkbox" aria-label="..." name="interesse" value="${i.id}" checked="checked">
                          </span>
                          <input type="text" class="form-control" readonly="readonly" disabled="disabled" value="${i.descricao}" title="Interesse">
                         </div><!-- /input-group -->

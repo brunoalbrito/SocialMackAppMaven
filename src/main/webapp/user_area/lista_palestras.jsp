@@ -1,13 +1,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<c:import url="/template/header_post_login.jsp"/>
+<c:import url="/template/header_pos_login_participante.jsp"/>
 
-<div class="row">
-
-
-
-    <c:forEach var="p" items="${palestras}">
-
+<div class="bg-faded p-4 my-4">
+   <c:forEach var="p" items="${palestras}">
+<center>
         <div class="col-sm-12 col-md-4 col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -23,10 +21,7 @@
                 </div>
             </div>
         </div>
-
+</center>
     </c:forEach>
 </div>
-
-<c:import url="../template/footer_post_login.jsp"/>
-
-<c:import url="../template/footer_post_login.jsp"/>
+<c:import url="../template/footer.jsp"/>

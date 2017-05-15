@@ -45,7 +45,7 @@ public class PalestraDAO implements GenericDAO<Palestra> {
         List<Palestra> palestras = new ArrayList<Palestra>();
 
         //Declarar String de busca
-        String sql = "SELECT * FROM palestra";
+        String sql = "SELECT * FROM palestra ORDER BY id ASC";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);

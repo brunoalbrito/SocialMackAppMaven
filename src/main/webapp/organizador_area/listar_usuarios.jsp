@@ -2,11 +2,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <c:import url="/template/header_pos_login_organizador.jsp"/>
-<div class="row">
+<div class="bg-faded p-4 my-4">
 
     <c:forEach var="i" items="${participantes}">
-                <p>Participante => <c:out value="${i.nome}"></c:out><p>
-        </c:forEach>
+        <p>Participante => <c:out value="${i.nome}"></c:out><p>
+    </c:forEach>
 
 </div>
 
