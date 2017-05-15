@@ -16,7 +16,7 @@
 
         <a href="${pageContext.request.contextPath}/FrontController?ctrl=PalestraInscrito" class="btn btn-warning">Agenda</a>
 
-        <a href="<c:url value="/user_area/editar.jsp?Participante=${participante.id_pessoa}" class="btn btn-warning" ">Perfil</a>
+        <a href="/user_area/editar.jsp?Participante=${participante.id_pessoa}" class="btn btn-warning">Perfil</a>
 
     </center>
 
