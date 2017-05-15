@@ -41,7 +41,7 @@
 
 <body>
 
-    <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down"><a style="text-decoration: none; color: #fff" href="home.html">SocialMack</a></div>
+    <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down"><a style="text-decoration: none; color: #fff" href="home.jsp">SocialMack</a></div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-4 hidden-md-down"></div>
 
     <!-- Navigation -->
