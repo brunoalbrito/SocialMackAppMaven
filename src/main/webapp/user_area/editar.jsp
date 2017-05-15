@@ -23,10 +23,6 @@
 			
     			<form action="${pageContext.request.contextPath}/FrontController" method="POST">
             <c:out value="${participante.senha}"></c:out>
-                <p>
-                    <label for="id">ID:</label><br>
-                    <input type="text" class="form-group" disabled id="id" name="id" value="${params.id_pessoa}" />
-            </p>
             <p>
                 <label for="name">Nome:</label><br>
                 <input type="text" id="name" name="name" value="${params.nome}" class=""/>
