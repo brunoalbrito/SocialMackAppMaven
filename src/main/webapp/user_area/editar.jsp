@@ -3,69 +3,37 @@
 
 
 <c:import url="/template/header_pos_login_participante.jsp"/>
-
-                <%
-                    String id_pessoa = request.getParameter("idPessoa"); 
-                    String nome = request.getParameter("nome"); 
-                    String email = request.getParameter("email"); 
-                    String senha = request.getParameter("senha"); 
-                    String celular = request.getParameter("celular"); 
-                    String formacao = request.getParameter("formacao"); 
-                    String curso = request.getParameter("curso");
-                %>
 <center>
     	
     		<div class="bg-faded p-4 my-4">
-			
 			<hr class="divider">
             <h2 class="text-center text-lg text-uppercase my-0">Editar <strong>Perfil</strong></h2>
             <hr class="divider">
 			
-    			<form action="${pageContext.request.contextPath}/FrontController" method="POST">
-            <c:out value="${participante.senha}"></c:out>
-            <p>
-                <label for="name">Nome:</label><br>
-                <input type="text" id="name" name="name" placeholder= "${params.nome}" value="${params.nome}" class=""/>
-            </p>
+    		<form action="${pageContext.request.contextPath}/FrontController" method="POST">
+                <p>
+                    <label for="name">Nome:</label><br>
+                    <input type="text" id="name" name="name" value="${participante.nome}" class=""/>
+                </p>
 
             <p>
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" disable="true" placeholder= "${params.email}" value="${params.email}"/>
+                <input type="email" id="email" name="email" disable="true" value="${participante.email}"/>
             </p>
-
-            <c:choose>
-                <c:when test="${params.senha == null}">
                     <p>
                         <label for="senha">Senha:</label><br>
-                        <input type="text" id="senha" placeholder= "${params.senha}" name="senha"/>
+                        <input type="text" id="senha" name="senha" value="${participante.senha}/>
                     </p>
 
                     <p>
                         <label for="celular">Celular:</label><br>
-                        <input type="text" id="celular" placeholder= "${params.celular}" name="celular"/>
+                        <input type="text" id="celular" value= "${participante.celular}" name="celular"/>
                     </p>
                     <p>
                         <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" placeholder= "${params.formacao}" name="formacao"/>
+                        <input type="text" id="formacao" value="${participante.formacao}" name="formacao"/>
                     </p>
-                </c:when>
-                <c:otherwise>
-                    <p>
-                        <label for="senha">Senha:</label><br>
-                        <input type="text" id="senha" name="senha" placeholder= "${params.senha}" value="${params.senha}"/>
-                    </p>
-
-                    <p>
-                        <label for="celular">Celular:</label><br>
-                        <input type="text" id="celular" name="celular" placeholder= "${params.celular}" value="${params.celular}"/>
-                    </p>
-                    <p>
-                        <label for="formacao">Formacao:</label><br>
-                        <input type="text" id="formacao" name="formacao" placeholder= "${params.formacao}" value="${params.curso}"/>
-                    </p>
-                </c:otherwise>
-            </c:choose>
-            <input type="hidden" name="idParticipante" value="${params.id_pessoa}"
+            <input type="hidden" name="idParticipante" value="${participante.id_pessoa}"/>
             <input type="hidden" name="ctrl" value="AlterarParticipante"/>
                     <br>
             <p>
